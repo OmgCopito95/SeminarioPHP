@@ -206,10 +206,8 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 	float:right;
 }
 
-/* ------------------- */
-
-.one_half, .two_half{
-	display:block; 
-	float:left; 
-	margin:0 20px 0 0;
+.fo_center{
+	float: center;
 }
+
+/* ------------------- */
