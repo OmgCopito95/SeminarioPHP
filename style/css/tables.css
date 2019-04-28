@@ -10,6 +10,10 @@
   padding: 8px;
 }
 
+#tablas img{ /* para que la imagen en la tabla se vea bien*/
+  width: 20px;
+}
+
 #tablas tr:nth-child(even){ /* para que una fila quede de otro color*/
   background-color: #f2f2f2;
 }
