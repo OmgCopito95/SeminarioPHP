@@ -87,7 +87,7 @@ legend{
 }
 
 input, textarea, select{ /* tipo de letra y tamaño de los input */
-	font-size:12px; 
+	font-size:13px; 
 	font-family:Georgia,"Times New Roman",Times,serif;
 }
 

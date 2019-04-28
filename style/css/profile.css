@@ -32,6 +32,17 @@
   font-size: .87em;
   font-family: "varela round", sans-serif;
 }
+
+.user-profile  .input { /* nombre de usuario*/
+  margin: auto;
+  display: inline-block;
+  margin-left: 10.43em;
+  width: 20px;
+  color: #e76043; 
+  font-size: .87em;
+  font-family: "varela round", sans-serif;
+}
+
 .user-profile > img.avatar { /* estilo para la imagen del usuario */
 	padding: .7em;
   margin-left: .3em;
