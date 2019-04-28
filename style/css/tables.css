@@ -6,6 +6,7 @@
 
 #tablas td, #tablas th { /* bordes */
   border: 1px solid #ddd; 
+  text-align: center;
   padding: 8px;
 }
 
