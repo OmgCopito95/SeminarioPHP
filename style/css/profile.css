@@ -2,26 +2,20 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway|Varela+Round|Coda);
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
-
-
-.title-pen {
+.title-pen { /* titulo */
   color: #333;
   font-family: "Coda", sans-serif;
   text-align: center;
 }
-.title-pen span {
-  color: #55acee;
-}
 
-.user-profile {
+.user-profile { /* foto y nombre del usuario*/
   margin: auto;
-	width: 25em; 
-  height: 11em;
+	width: 300px; 
+  height: 100px;
   background: #fff;
-  border-radius: .3em;
 }
 
-.user-profile  .username {
+.user-profile  .name {
   margin: auto;
   margin-top: -4.40em;
   margin-left: 5.80em;
@@ -30,7 +24,7 @@
   font-family: "Coda", sans-serif;
   font-weight: bold;
 }
-.user-profile  .bio {
+.user-profile  .username {
   margin: auto;
   display: inline-block;
   margin-left: 10.43em;
@@ -38,60 +32,11 @@
   font-size: .87em;
   font-family: "varela round", sans-serif;
 }
-.user-profile > .description {
-  margin: auto;
-  margin-top: 1.35em;
-  margin-right: 4.43em;
-  width: 14em;
-  color: #c0c5c5; 
-  font-size: .87em;
-  font-family: "varela round", sans-serif;
-}
-.user-profile > img.avatar {
+.user-profile > img.avatar { /* estilo para la imagen del usuario */
 	padding: .7em;
   margin-left: .3em;
   margin-top: .3em;
   height: 6.23em;
   width: 6.23em;
   border-radius: 18em;
-}
-
-.user-profile ul.data {
-	margin: 2em auto;
-	height: 3.70em;
-  background: #4eb6b6;
-  text-align: center;
-  border-radius: 0 0 .3em .3em;
-}
-.user-profile li {
-	margin: 0 auto;
-  padding: 1.30em; 
-  width: 33.33334%;
-  display: table-cell;
-  text-align: center;
-}
-
-.user-profile span {
-	font-family: "varela round", sans-serif;
-	color: #e3eeee;
-  white-space: nowrap;
-  font-size: 1.27em;
-  font-weight: bold;
-}
-.user-profile span:hover {
-  color: #daebea;
-}
-
-footer > h1 {
-  display: block;
-  text-align: center;
-  clear: both;
-  font-family: "Coda", sans-serif;
-  color: #343f3d;
-  line-height: 6;
-  font-size: 1.6em;
-}
-footer > h1 a {
-  text-decoration: none;
-  color: #ea4c89;
 }
