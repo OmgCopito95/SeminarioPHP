@@ -15,7 +15,7 @@
   background: #fff;
 }
 
-.user-profile  .name {
+.user-profile  .name { /* nombre y apellido */
   margin: auto;
   margin-top: -4.40em;
   margin-left: 5.80em;
@@ -24,7 +24,7 @@
   font-family: "Coda", sans-serif;
   font-weight: bold;
 }
-.user-profile  .username {
+.user-profile  .username { /* nombre de usuario*/
   margin: auto;
   display: inline-block;
   margin-left: 10.43em;
@@ -40,3 +40,4 @@
   width: 6.23em;
   border-radius: 18em;
 }
+

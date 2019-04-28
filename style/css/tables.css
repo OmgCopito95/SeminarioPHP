@@ -1,0 +1,26 @@
+#tablas {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse; /* para que las columnas queden juntas*/
+  width: 100%;
+}
+
+#tablas td, #tablas th { /* bordes */
+  border: 1px solid #ddd; 
+  padding: 8px;
+}
+
+#tablas tr:nth-child(even){ /* para que una fila quede de otro color*/
+  background-color: #f2f2f2;
+} 
+
+#tablas a{ /* links en las tablas */
+  background-color: #f2f2f2;
+  color: #2b7a78;
+}
+#tablas th { /* columnas de arriba de todo con los titulos*/
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #333333;
+  color: white;
+}

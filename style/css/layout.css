@@ -19,13 +19,6 @@ a{ /* para que no queden subrayados los links */
 	text-decoration:none;
 } 
 
-/* para que el texto del footer quede acomodado a izquierda y derecha*/
-.fo_left{
-	float:left;
-}
-.fo_right{
-	float:right;
-}
 
 /* ----------------------------------------------SECCIONES-------------------------------------*/
 
@@ -46,7 +39,7 @@ div.section{ /* secciones de la pagina */
 	background-color:#FFFFFF;
 }
 .row2 a{ /* seccion 2 - color de los links */
-	color:#FF9900; 
+	color:#2b7a78; 
 	background-color:#FFFFFF;
 }
 .row3, .row3 a{ /* seccion 3 para el footer */
@@ -203,4 +196,20 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 #footer p{
 	margin:0; 
 	padding:0;
+}
+
+/* para que el texto del footer quede acomodado a izquierda y derecha*/
+.fo_left{
+	float:left;
+}
+.fo_right{
+	float:right;
+}
+
+/* ------------------- */
+
+.one_half, .two_half{
+	display:block; 
+	float:left; 
+	margin:0 20px 0 0;
 }
