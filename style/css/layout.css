@@ -177,9 +177,9 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 
 /*----------------------------------------------Contenido-------------------------------------*/
 
-#container{
+/*#container{
 	padding:15% 0;
-}
+}*/
 
 #container section{
 	display:block; 
