@@ -54,49 +54,62 @@
             </form> 
           </div>
         </div>
-
         <br>
-        <table align="center">
-          <tr>
-            <td>
-                <table id="tablas">
-                  <tr>
-                    <th>Imagen</th>
-                    <th>Mensaje</th>
-                    <th>Fecha - Hora</th>
-                    <th>Nombre de usuario</th>
-                    <th>Foto de perfil</th>
-                  </tr>
-                  <tr>
-                    <td><img src="../style/images/goofy.jpg"/></td>
-                    <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
-                    <td>15/10/2019 - 15:32</a></td>
-                    <td>@nombre_de_usuario</td>
-                    <td><img src="../style/images/goofy.jpg"/></td>
-                    <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
-                    <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td><img src="../style/images/goofy.jpg"/></td>
-                    <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
-                    <td>15/10/2019 - 15:32</a></td>
-                    <td>@nombre_de_usuario</td>
-                    <td><img src="../style/images/goofy.jpg"/></td>
-                    <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
-                    <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td><img src="../style/images/goofy.jpg"/></td>
-                    <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
-                    <td>15/10/2019 - 15:32</a></td>
-                    <td>@nombre_de_usuario</td>
-                    <td><img src="../style/images/goofy.jpg"/></td>
-                    <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
-                    <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                  </tr>
-                </table>
-            </td>
-            <td>              
+        <div style="text-align: center">
+          <button class="button button1" onclick="openTab('Mensajes')">Mensajes</button>
+          <button class="button button1" onclick="openTab('Seguidos')">Seguidos</button>
+        </div>
+        <br>
+        
+        
+        <div id="Mensajes" class="tab">
+          <table align="center">
+            <tr>
+              <td>
+                  <table id="tablas">
+                    <tr>
+                      <th>Imagen</th>
+                      <th>Mensaje</th>
+                      <th>Fecha - Hora</th>
+                      <th>Nombre de usuario</th>
+                      <th>Foto de perfil</th>
+                    </tr>
+                    <tr>
+                      <td><img src="../style/images/goofy.jpg"/></td>
+                      <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
+                      <td>15/10/2019 - 15:32</a></td>
+                      <td>@nombre_de_usuario</td>
+                      <td><img src="../style/images/goofy.jpg"/></td>
+                      <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
+                      <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../style/images/goofy.jpg"/></td>
+                      <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
+                      <td>15/10/2019 - 15:32</a></td>
+                      <td>@nombre_de_usuario</td>
+                      <td><img src="../style/images/goofy.jpg"/></td>
+                      <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
+                      <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../style/images/goofy.jpg"/></td>
+                      <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
+                      <td>15/10/2019 - 15:32</a></td>
+                      <td>@nombre_de_usuario</td>
+                      <td><img src="../style/images/goofy.jpg"/></td>
+                      <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
+                      <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+                  </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="Seguidos" class="tab" style="display:none">
+          <table align="center"> 
+            <tr>
+              <td>
                 <table id="tablas">
                   <tr>
                     <th>Usuario</th>
@@ -115,9 +128,10 @@
                     <td><a href="">Dejar de Seguir</a></td>
                   </tr>
                 </table>
-            </td>
-          </tr>
-        </table>
+              </td>
+            </tr>
+          </table>
+        </div>
       <br>
       </div>
     </div> <!-- fin seccion 2 -->
@@ -131,4 +145,18 @@
     </div>
 
   </body>
+
+
+  <script>
+    function openTab(tabName) {
+      var i;
+      var x = document.getElementsByClassName("tab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      document.getElementById(tabName).style.display = "block";  
+    }
+  </script>
+
+
 </html>

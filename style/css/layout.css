@@ -17,8 +17,34 @@ body{ /* estilo principal del body */
 a{ /* para que no queden subrayados los links */
 	outline:none; 
 	text-decoration:none;
+	cursor: pointer;
 } 
 
+.button{
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	font-family:Georgia, "Times New Roman", Times, serif; /* tipo de letra */
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+  	cursor: pointer;
+  	-webkit-transition-duration: 0.4s; /* Safari */
+  	transition-duration: 0.4s;
+}
+
+.button:hover {
+  	background-color: #2b7a78; /* Green */
+  	color: white;
+}
+.button1{
+	background-color: white; 
+  	color: black; 
+  	border: 2px solid #2b7a78;
+}
 
 /* ----------------------------------------------SECCIONES-------------------------------------*/
 
