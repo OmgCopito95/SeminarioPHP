@@ -21,7 +21,7 @@ a{ /* para que no queden subrayados los links */
 } 
 
 .button{
-	background-color: #4CAF50; /* Green */
+	background-color: #2b7a78;
 	border: none;
 	color: white;
 	font-family:Georgia, "Times New Roman", Times, serif; /* tipo de letra */
@@ -37,7 +37,7 @@ a{ /* para que no queden subrayados los links */
 }
 
 .button:hover {
-  	background-color: #2b7a78; /* Green */
+  	background-color: #2b7a78; 
   	color: white;
 }
 .button1{
@@ -53,7 +53,6 @@ div.section{ /* secciones de la pagina */
 	width:100%;
 	margin:0; 
 	padding:0; 
-	text-align:left;
 }
 
 .row1, .row1 a{ /* seccion 1 para el menu - color de links */
