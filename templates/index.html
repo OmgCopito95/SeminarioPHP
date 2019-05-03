@@ -24,7 +24,16 @@
         <nav> <!-- menu con los links -->
           <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
+            <li>
+              <div class="dropdown">
+                <a>Perfil</a>
+                <div class="dropdown-content">
+                <a href="perfil.html">Mi Perfil</a>
+                <a href="editar-perfil.html">Editar Perfil</a>
+                <a href="#">Cerrar Sesión</a>
+                </div>
+                </div>
+            </li>
             <li>
               <form action="#" method="post"> <!-- buscar -->
                 <fieldset>
@@ -47,7 +56,7 @@
           <img class="avatar" src="../style/images/goofy.jpg" />
           <div class="name">Juan Perez</div>
           <div class="input">
-            <form action="#" method="post"> 
+            <form action="busqueda.html" method="post"> 
               <textarea rows="3" cols="20" maxlength="140"></textarea>
               <input type="file" name="pic" accept="image/*">
               <input type="submit" id="b_submit" value="Publicar">
