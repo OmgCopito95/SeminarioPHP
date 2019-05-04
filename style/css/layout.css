@@ -2,12 +2,12 @@
 
 html{ /* para que aparezca el scroll*/
 	overflow-y:scroll;
-} 
+}
 
 body{ /* estilo principal del body */
-	margin:0; 
-	padding:0; 
-	font-size:13px; 
+	margin:0;
+	padding:0;
+	font-size:13px;
 	font-family:Georgia, "Times New Roman", Times, serif; /* tipo de letra */
 	color:#919191;
 	background-color:#17252a;
@@ -15,13 +15,13 @@ body{ /* estilo principal del body */
 }
 
 a{ /* para que no queden subrayados los links */
-	outline:none; 
+	outline:none;
 	text-decoration:none;
 	cursor: pointer;
-} 
+}
 
 .button{ /* propiedades de un boton */
-	background-color: #2b7a78; 
+	background-color: #2b7a78;
 	border: none;
 	color: white;
 	font-family:Georgia, "Times New Roman", Times, serif; /* tipo de letra */
@@ -37,12 +37,12 @@ a{ /* para que no queden subrayados los links */
 }
 
 .button:hover { /* cuando se le pasa el mouse*/
-  	background-color: #2b7a78; 
+  	background-color: #2b7a78;
   	color: white;
 }
-.button1{ 
-	background-color: white; 
-  	color: black; 
+.button1{
+	background-color: white;
+  	color: black;
   	border: 2px solid #2b7a78;
 }
 
@@ -51,8 +51,8 @@ a{ /* para que no queden subrayados los links */
 div.section{ /* secciones de la pagina */
 	display:block;
 	width:100%;
-	margin:0; 
-	padding:0; 
+	margin:0;
+	padding:0;
 }
 
 .row1, .row1 a{ /* seccion 1 para el menu - color de links */
@@ -60,11 +60,11 @@ div.section{ /* secciones de la pagina */
 	background-color:#333333; /* color del fondo del menu */
 }
 .row2{ /* seccion 2 para el contenido */
-	color:#979797; 
+	color:#979797;
 	background-color:#FFFFFF;
 }
 .row2 a{ /* seccion 2 - color de los links */
-	color:#2b7a78; 
+	color:#2b7a78;
 	background-color:#FFFFFF;
 }
 .row3, .row3 a{ /* seccion 3 para el footer */
@@ -75,25 +75,25 @@ div.section{ /* secciones de la pagina */
 /*----------------------------------------------GENERAL-------------------------------------*/
 
 #header, #container, #footer{
-	display:block; 
-	width:90%; 
+	display:block;
+	width:90%;
 	margin:0 auto;
 }
 
 nav ul{
-	margin:0; 
-	padding:0; 
+	margin:0;
+	padding:0;
 	list-style:none;
 }
 
 /* estilo de los titulos */
 h1, h2, h3, h4, h5, h6{
-	margin:0; 
-	padding:0; 
+	margin:0;
+	padding:0;
 	font-size:16px; /* tamanio de la letra */
 	font-weight:bold; /* en negrita */
-	font-style:normal; 
-	line-height:normal; 
+	font-style:normal;
+	line-height:normal;
 	text-transform:uppercase; /* lo convierte en mayuscula*/
 }
 
@@ -103,16 +103,16 @@ address{
 
 /* legend: es el buscar - para que no aparezca recuadro ni texto en el */
 form, fieldset, legend{
-	margin:0; 
-	padding:0; 
+	margin:0;
+	padding:0;
 	border:none;
 }
 legend{
 	display:none;
 }
 
-input, textarea, select{ /* tipo de letra y tamaño de los input */
-	font-size:13px; 
+input, textarea, select{ /* tipo de letra y tamaï¿½o de los input */
+	font-size:13px;
 	font-family:Georgia,"Times New Roman",Times,serif;
 }
 
@@ -124,13 +124,13 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 }
 
 #header #hgroup{
-	float:left; 
+	float:left;
 	margin:0 0 20px 0;
 }
 
-#header #hgroup h1, 
+#header #hgroup h1,
 #header #hgroup h2{
-	font-weight:normal; 
+	font-weight:normal;
 	text-transform:none;
 }
 
@@ -143,18 +143,18 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 }
 
 #header form{
-	display:block; 
-	width:290px; 
-	float:right; 
-	margin:-5px 0; 
+	display:block;
+	width:290px;
+	float:right;
+	margin:-5px 0;
 	padding:0;
 }
 
 #header form input{ /* input para hacer un submit */
-	display:block; 
+	display:inline-block;
 	float:left; /* para que se mantenga a la izquierda */
 	width:200px; /* ancho */
-	margin:0; 
+	margin:0;
 	padding:5px; /* altura*/
 	color:#C0BAB6; /* color de letra */
 	background-color:#232323; /* color de fondo */
@@ -162,14 +162,14 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 }
 
 #header form #b_submit{ /* boton de submit */
-	display:block; 
-	float:right; 
-	width:70px; 
-	font-size:12px;  
-	text-transform:uppercase; 
-	color:#FFFFFF; 
-	background-color:#2b7a78; 
-	border:none; 
+	display:inline-block;
+	float:right;
+	width:70px;
+	font-size:12px;
+	text-transform:uppercase;
+	color:#FFFFFF;
+	background-color:#2b7a78;
+	border:none;
 	cursor:pointer;
 }
 
@@ -205,25 +205,25 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 
 /* --------- nav - menu ----------------*/
 #header nav{
-	display:block; 
-	width:100%; 
-	margin:0; 
-	padding:20px 0; 
-	color:#C0BAB6; 
-	background-color:#232323; 
+	display:block;
+	width:100%;
+	margin:0;
+	padding:20px 0;
+	color:#C0BAB6;
+	background-color:#232323;
 	clear:both;
 }
 #header nav ul{
 	padding:0 20px;
 }
 #header nav li{
-	display:inline; 
-	margin-right:25px; 
+	display:inline;
+	margin-right:25px;
 	text-transform:uppercase;
 }
 #header nav li a{
 	color:#C0BAB6; /* color de los elementos del menu*/
-	background-color:#232323; /* color fondo menu */ 
+	background-color:#232323; /* color fondo menu */
 }
 #header nav li a:hover{
 	color:#2b7a78; /* color de cuando se le pasa por arriba el mouse al link del menu*/
@@ -237,10 +237,62 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 }*/
 
 #container section{
-	display:block; 
-	width:100%; 
-	margin:0 0 30px 0; 
+	display:block;
+	width:100%;
+	margin:0 0 30px 0;
 	padding:0;
+}
+
+#container #regform{
+	border: 2px solid #f1f1f1;
+	padding: 20px 0px;
+	margin: 0 0;
+	width: 35%;
+	display: block;
+	height: 100%;
+}
+
+.formfield{
+	display: block;
+	width: 400px;
+	text-align: left;
+	margin: 15px 0px 15px 0px;
+}
+
+#container #regform input{
+  padding: 5px 5px;
+  margin: 3px 0px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+	width: 100%;
+}
+
+#container #regform .formfield label{
+	display: block;
+	width: 100%;
+	margin: 0;
+	border: 0;
+}
+
+#container #regform h2{
+	color: #17252a;
+	font-size: 19px;
+	margin-bottom: 20px;
+}
+
+#container #regform button {
+  background-color: #2b7a78;
+  color: white;
+  padding: 12px 22px;
+  margin: 10px 0px 0px 0px;
+	font-size: 16px;
+  border: none;
+  cursor: pointer;
+	display: block;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 /*----------------------------------------------Footer-------------------------------------*/
@@ -249,7 +301,7 @@ input, textarea, select{ /* tipo de letra y tamaño de los input */
 	padding:20px 0;
 }
 #footer p{
-	margin:0; 
+	margin:0;
 	padding:0;
 }
 
