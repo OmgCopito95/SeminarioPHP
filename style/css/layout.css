@@ -144,7 +144,7 @@ input, textarea, select{ /* tipo de letra y tama�o de los input */
 
 #header form{
 	display:block;
-	width:290px;
+	width:auto;
 	float:right;
 	margin:-5px 0;
 	padding:0;
@@ -154,7 +154,7 @@ input, textarea, select{ /* tipo de letra y tama�o de los input */
 	display:inline-block;
 	float:left; /* para que se mantenga a la izquierda */
 	width:200px; /* ancho */
-	margin:0;
+	margin:0px 5px;
 	padding:5px; /* altura*/
 	color:#C0BAB6; /* color de letra */
 	background-color:#232323; /* color de fondo */
@@ -164,7 +164,8 @@ input, textarea, select{ /* tipo de letra y tama�o de los input */
 #header form #b_submit{ /* boton de submit */
 	display:inline-block;
 	float:right;
-	width:70px;
+	width:auto;
+	padding: 7px 7px 6px 7px;
 	font-size:12px;
 	text-transform:uppercase;
 	color:#FFFFFF;
