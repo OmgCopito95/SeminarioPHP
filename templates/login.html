@@ -45,29 +45,30 @@
 
             <div class="formfield">
               <label for="nombre"><b>Nombre</b></label>
-              <input type="text" name="nombre" required>
+              <input type="text" name="nombre" pattern="[A-Za-z]{1,}" title="Solo debe contener letras" required>
             </div>
 
             <div class="formfield">
               <label for="apellido"><b>Apellido</b></label>
-              <input type="text" name="apellido" required>
+              <input type="text" name="apellido" pattern="[A-Za-z]{1,}" title="Solo debe contener letras" required>
             </div>
 
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
-              <input type="text" name="email" required>
+              <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Formato de correo electrónico inválido" required>
             </div>
 
             <div class="formfield">
               <label for="username"><b>Nombre de usuario</b></label>
-              <input type="text" name="username" required>
+              <input type="text" name="username" pattern="[A-Za-z0-9]{6,}" title="Deben ser más de 6 numeros y/o letras" required>
             </div>
 
             <div class="formfield">
               <label for="password1"><b>Contraseña</b></label>
-              <input type="password" name="password1" required>
+              <input type="password" name="password1" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Deben ser mas de 6 caracteres e incluir: 1 mayusc, 1 minusc, 1 numero/simbolo" required>
             </div>
 
+            <!-- #TODO Comprobar que las psw sean iguales! (en JS) -->
             <div class="formfield">
               <label for="password2"><b>Repita su contraseña</b></label>
               <input type="password" name="password2" required>
