@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../style/css/tables.css" type="text/css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+    <script src="../style/js/codigoJS.js"></script>
   </head>
 
   <body>
@@ -40,42 +40,42 @@
     <div class="section row2">
       <div id="container" align="center">
         <br>
-          <form id="regform" action="login.html" method="post">
+          <form id="regform" action="" onsubmit="return(validarForm())">
             <h2>¿Aún no tienes una cuenta? ¡Regístrate!</h2>
 
             <div class="formfield">
               <label for="nombre"><b>Nombre</b></label>
-              <input type="text" name="nombre" required>
+              <input type="text" id="nombre" required>
             </div>
 
             <div class="formfield">
               <label for="apellido"><b>Apellido</b></label>
-              <input type="text" name="apellido" required>
+              <input type="text" id="apellido" required>
             </div>
 
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
-              <input type="text" name="email" required>
+              <input type="text" id="email" required>
             </div>
 
             <div class="formfield">
               <label for="username"><b>Nombre de usuario</b></label>
-              <input type="text" name="username" required>
+              <input type="text" id="username" required>
             </div>
 
             <div class="formfield">
               <label for="password1"><b>Contraseña</b></label>
-              <input type="password" name="password1" required>
+              <input type="password" id="password1" required>
             </div>
 
             <div class="formfield">
               <label for="password2"><b>Repita su contraseña</b></label>
-              <input type="password" name="password2" required>
+              <input type="password" id="password2" required>
             </div>
 
             <div class="formfield">
               <label for="pic"><b>Imagen de perfil</b></label>
-              <input type="file" name="pic" accept="image/*" required>
+              <input type="file" id="pic" accept="image/*" required>
             </div>
 
             <button type="submit">Registrarme</button>
