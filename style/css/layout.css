@@ -20,6 +20,8 @@ a{ /* para que no queden subrayados los links */
 	cursor: pointer;
 }
 
+/* ------------------------- BOTONES ---------------------------------*/
+
 .button{ /* propiedades de un boton */
 	background-color: #2b7a78;
 	border: none;
@@ -45,6 +47,11 @@ a{ /* para que no queden subrayados los links */
   	color: black;
   	border: 2px solid #2b7a78;
 }
+
+button:hover {
+  opacity: 0.8;
+}
+
 
 /* ----------------------------------------------SECCIONES-------------------------------------*/
 
@@ -187,7 +194,7 @@ input, textarea, select{ /* tipo de letra y tama�o de los input */
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-principal: 1;
 }
 
 .dropdown-content a { /* estilo del dropdown cuando se los usa con links */
@@ -244,11 +251,12 @@ input, textarea, select{ /* tipo de letra y tama�o de los input */
 	padding:0;
 }
 
+/* ----------------------------- FORMULARIOS ----------------------------------- */
 #container #regform{
 	border: 2px solid #f1f1f1;
 	padding: 20px 0px;
 	margin: 0 0;
-	width: 35%;
+	width: 40%;
 	display: block;
 	height: 100%;
 }
@@ -290,10 +298,6 @@ input, textarea, select{ /* tipo de letra y tama�o de los input */
   border: none;
   cursor: pointer;
 	display: block;
-}
-
-button:hover {
-  opacity: 0.8;
 }
 
 /*----------------------------------------------Footer-------------------------------------*/
