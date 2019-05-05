@@ -142,6 +142,12 @@ input, textarea, select{ /* tipo de letra y tamanio de los input */
 	margin:0 0 20px 0;
 }
 
+#header #hgroup img{
+	display: inline-block;
+	height: 27px;
+	margin-right: 5px;
+}
+
 #header #hgroup h1,
 #header #hgroup h2{
 	font-weight:normal;
@@ -150,6 +156,7 @@ input, textarea, select{ /* tipo de letra y tamanio de los input */
 
 #header #hgroup h1{
 	font-size:36px;
+	display: inline-block;
 }
 
 #header #hgroup h2{
