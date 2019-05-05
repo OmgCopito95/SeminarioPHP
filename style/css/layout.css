@@ -305,7 +305,6 @@ input, textarea, select{ /* tipo de letra y tamanio de los input */
   border: none;
   cursor: pointer;
 	display: block;
-	font-family:Georgia, "Times New Roman", Times, serif; /* tipo de letra */
 }
 
 /*----------------------------------------------Footer-------------------------------------*/
