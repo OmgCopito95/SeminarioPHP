@@ -32,11 +32,10 @@
   font-size: .87em;
 }
 
-.user-profile  .input { /* nombre de usuario*/
+.user-profile  .input { 
   margin: auto;
   display: inline-block;
   margin-left: 10.43em;
-  width: 20px;
   font-size: .87em;
 }
 
