@@ -5,7 +5,7 @@ html{ /* para que aparezca el scroll*/
 }
 
 body{ /* estilo principal del body */
-	
+
 	margin:0;
 	padding:0;
 	font-size:13px;
@@ -46,7 +46,7 @@ a{ /* para que no queden subrayados los links */
 	background-color: white;
   	color: black;
   	border: 2px solid #2b7a78;
-}  	
+}
 
 .button2{
 	border-radius: 50%;
@@ -296,7 +296,7 @@ input, textarea, select{ /* tipo de letra y tamanio de los input */
 	margin-bottom: 20px;
 }
 
-#container #regform button {
+#regbutton {
   background-color: #2b7a78;
   color: white;
   padding: 12px 22px;

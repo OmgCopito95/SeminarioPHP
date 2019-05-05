@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../style/css/pagination.css" type="text/css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  
+
   </head>
 
   <body>
@@ -20,7 +20,7 @@
         <div id="hgroup">
           <h1><a href="principal.html">The Wall</a></h1> <!-- titulo -->
           <h2>Nueva red social - Conecta con tus amigos!</h2> <!-- subtitulo -->
-        </div>        
+        </div>
         <nav> <!-- menu con los links -->
           <ul>
             <li><a href="principal.html">Inicio</a></li>
@@ -49,12 +49,51 @@
 
     <!-- seccion 2 -->
     <div class="section row2">
-      <div id="container">
+      <div id="container" align="center">
 
+        <br>
+          <form id="regform" style="border: 0px;" action="" onsubmit="return(validarForm())">
+            <h1 class="title-pen">Modificar perfil</h1></h2>
 
-        <!-- ACA VA EL CONTENIDO DE LA PAGINA CON LOS FORMS -->
+            <div class="formfield">
+              <label for="nombre"><b>Nombre</b></label>
+              <input type="text" id="nombre" placeholder="Juan" required>
+            </div>
 
-        
+            <div class="formfield">
+              <label for="apellido"><b>Apellido</b></label>
+              <input type="text" id="apellido" placeholder="Pérez" required>
+            </div>
+
+            <div class="formfield">
+              <label for="email"><b>Correo electrónico</b></label>
+              <input type="text" id="email" placeholder="juan.perez@mail.com" required>
+            </div>
+
+            <div class="formfield">
+              <label for="password1"><b>Contraseña actual</b></label>
+              <input type="password" id="passwordActual" required>
+            </div>
+
+            <div class="formfield">
+              <label for="password1"><b>Nueva contraseña</b></label>
+              <input type="password" id="password1" required>
+            </div>
+
+            <div class="formfield">
+              <label for="password2"><b>Repita su contraseña nueva</b></label>
+              <input type="password" id="password2" required>
+            </div>
+
+            <div class="formfield">
+              <label for="pic"><b>Imagen de perfil</b></label>
+              <input type="file" id="pic" accept="image/*" required>
+            </div>
+
+            <button class="button button1" type="submit">Guardar cambios</button>
+          </form>
+        <br>
+
       </div>
       <br>
     </div> <!-- fin seccion 2 -->
