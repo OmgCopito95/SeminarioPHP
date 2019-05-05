@@ -24,7 +24,8 @@
         <nav> <!-- menu con los links -->
           <ul>
             <li><a href="principal.html">Inicio</a></li>
-            <li><div class="dropdown">
+            <li>
+              <div class="dropdown">
                 <a>Perfil</a>
                 <div class="dropdown-content">
                 <a href="perfil.html">Mi Perfil</a>
@@ -32,7 +33,7 @@
                 <a href="#">Cerrar Sesión</a>
                 </div>
                 </div>
-              </li>
+            </li>
             <li>
               <form action="#" method="post"> <!-- buscar -->
                 <fieldset>
@@ -50,7 +51,19 @@
     <div class="section row2">
       <div id="container">
         <br>
-        <h1 class="title-pen"> Resultado de la Búsqueda</h1>
+        <h1 class="title-pen"> Últimas Actualizaciones</h1>
+        <div class="user-profile">
+          <img class="avatar" src="../style/images/goofy.jpg" />
+          <div class="name">Juan Perez</div>
+          <div class="input">
+            <form action="busqueda.html" method="post"> 
+              <textarea rows="3" cols="20" maxlength="140"></textarea>
+              <input type="file" name="pic" accept="image/*">
+              <input type="submit" id="b_submit" value="Publicar">
+            </form> 
+          </div>
+  
+        </div>
       <br>
       <br>
       <table align="center">
@@ -58,28 +71,52 @@
             <td>
                 <table id="tablas">
                   <tr>
-                    <th>Foto de perfil</th>
+                    <th>Imagen</th>
+                    <th>Mensaje</th>
+                    <th>Fecha - Hora</th>
                     <th>Nombre de usuario</th>
-                    <th>Nombre y apellido</th>
-                    <th>Seguir / Dejar de seguir</th>
+                    <th>Foto de perfil</th>
                   </tr>
                   <tr>
                     <td><img src="../style/images/goofy.jpg"/></td>
+                    <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
+                    <td>22/10/2019 - 15:32</a></td>
                     <td><a href="usuario.html">@nombre_de_usuario</a></td>
-                    <td>Pedro Perez</td>
-                    <td><a href=""> Seguir</a></td>
+                    <td><img src="../style/images/goofy.jpg"/></td>
+                    <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
                   </tr>
                   <tr>
                     <td><img src="../style/images/goofy.jpg"/></td>
+                    <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
+                    <td>9/10/2019 - 11:02</a></td>
                     <td><a href="usuario.html">@nombre_de_usuario</a></td>
-                    <td>Julieta Lanciotti</td>
-                    <td><a href="">Dejar de seguir</a></td>
+                    <td><img src="../style/images/goofy.jpg"/></td>
+                    <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="../style/images/goofy.jpg"/></td>
+                    <td>Hola soy un mensaje publicado super mega largo hola que tal</td>
+                    <td>7/2/2019 - 9:25</a></td>
+                    <td><a href="usuario.html">@nombre_de_usuario</a></td>
+                    <td><img src="../style/images/goofy.jpg"/></td>
+                    <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
                   </tr>
                 </table>
             </td>
           </tr>
         </table>
         <br>
+        <div style="text-align: right;">
+          <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a class="active" href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">&raquo;</a>
+          </div>
+        </div>
       </div>
       <br>
     </div> <!-- fin seccion 2 -->
@@ -91,5 +128,9 @@
         <p class="fo_right">Seminario PHP 2019 </p>
       </footer>
     </div>
+
+
+
+
   </body>
 </html>
