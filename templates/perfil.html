@@ -53,21 +53,23 @@
       <div id="container">
         <br>
         <h1 class="title-pen"> Mi Perfil</h1>
+        <br>
         <div class="user-profile">
           <img class="avatar" src="../style/images/goofy.jpg" />
           <div class="name">Juan Perez</div>
           <div class="username">@Nombre de Usuario</div>
           <div class="input">
-            <form action="#" method="post"> 
-              <textarea rows="3" cols="20" maxlength="140"></textarea>
+            <form action="" method="post"> 
+              <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required></textarea>
               <input type="file" name="pic" accept="image/*">
-              <input type="submit" id="b_submit" value="Publicar">
+              <button class="button button2 " type="submit"> Publicar </button>
             </form> 
           </div>
         </div>
         <br>
+        <br>
         <div style="text-align: center">
-          <button class="button button1" onclick="openTab('Mensajes')">Mensajes</button>
+          <button class="button button1" onclick="openTab('Mensajes')">Mis Mensajes</button>
           <button class="button button1" onclick="openTab('Seguidos')">Seguidos</button>
         </div>
         <br>
