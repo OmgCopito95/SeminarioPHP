@@ -30,7 +30,6 @@
   margin-left: 10.43em;
   color: #e76043; 
   font-size: .87em;
-  font-family: "varela round", sans-serif;
 }
 
 .user-profile  .input { /* nombre de usuario*/
@@ -38,9 +37,7 @@
   display: inline-block;
   margin-left: 10.43em;
   width: 20px;
-  color: #e76043; 
   font-size: .87em;
-  font-family: "varela round", sans-serif;
 }
 
 .user-profile > img.avatar { /* estilo para la imagen del usuario */
@@ -52,3 +49,18 @@
   border-radius: 18em;
 }
 
+.user-profile .input textarea{
+  margin-bottom: 10px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.user-profile .input input{
+  margin-bottom: 10px;
+}

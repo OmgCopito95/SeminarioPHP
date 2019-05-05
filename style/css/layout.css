@@ -5,6 +5,7 @@ html{ /* para que aparezca el scroll*/
 }
 
 body{ /* estilo principal del body */
+	
 	margin:0;
 	padding:0;
 	font-size:13px;
@@ -32,7 +33,6 @@ a{ /* para que no queden subrayados los links */
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
-	margin: 4px 2px;
   	cursor: pointer;
   	-webkit-transition-duration: 0.4s; /* Safari */
   	transition-duration: 0.4s;
@@ -43,6 +43,13 @@ a{ /* para que no queden subrayados los links */
   	color: white;
 }
 .button1{
+	background-color: white;
+  	color: black;
+  	border: 2px solid #2b7a78;
+}  	
+
+.button2{
+	border-radius: 50%;
 	background-color: white;
   	color: black;
   	border: 2px solid #2b7a78;
@@ -118,9 +125,9 @@ legend{
 	display:none;
 }
 
-input, textarea, select{ /* tipo de letra y tama�o de los input */
+input, textarea, select{ /* tipo de letra y tamanio de los input */
 	font-size:13px;
-	font-family:Georgia,"Times New Roman",Times,serif;
+	font-family:Georgia, "Times New Roman", Times, serif; /* tipo de letra */
 }
 
 
@@ -273,7 +280,7 @@ input, textarea, select{ /* tipo de letra y tama�o de los input */
   margin: 3px 0px;
   border: 1px solid #ccc;
   box-sizing: border-box;
-	width: 100%;
+  width: 100%;
 }
 
 #container #regform .formfield label{
@@ -298,6 +305,7 @@ input, textarea, select{ /* tipo de letra y tama�o de los input */
   border: none;
   cursor: pointer;
 	display: block;
+	font-family:Georgia, "Times New Roman", Times, serif; /* tipo de letra */
 }
 
 /*----------------------------------------------Footer-------------------------------------*/
