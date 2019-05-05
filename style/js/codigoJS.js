@@ -24,7 +24,7 @@ function validarForm(){
 			return false;
 		}else{
 				// verifico el nombre de usuario (6 caracteres alfanumericos)
-			r = /....../;
+			r = /[A-Za-z0-9]{6,12}/;
 			var patron = r.exec(document.getElementById('username').value);
 			if (!patron){
 				alert("El nombre de usuario no cumple con los requisitos");
@@ -44,7 +44,7 @@ function validarForm(){
 						return false; 
 					}else{
 						// verifico que la contraseña cumpla con el patron (>=6 caracteres, letras may y min, un num o simb)
-						var r = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,20}$/;
+						var r = /(?=^.{6,12}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
 						var patron = r.exec(document.getElementById('password1').value);
 					    if (!patron){
 					    	alert("La contraseña no cumple con los requisitos.");   	
