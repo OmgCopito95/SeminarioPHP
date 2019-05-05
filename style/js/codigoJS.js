@@ -24,7 +24,7 @@ function validarForm(){
 			return false;
 		}else{
 				// verifico el nombre de usuario (6 caracteres alfanumericos)
-			r = /[A-Za-z0-9]{6,12}/;
+			r = /^[A-Za-z0-9]{6,12}$/;
 			var patron = r.exec(document.getElementById('username').value);
 			if (!patron){
 				alert("El nombre de usuario no cumple con los requisitos");
