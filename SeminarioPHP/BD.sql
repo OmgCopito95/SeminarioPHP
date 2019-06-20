@@ -2,6 +2,8 @@
 -- Wed Oct 18 12:26:34 2017
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
+CREATE DATABASE seminariophp; 
+USE seminariophp; 
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;

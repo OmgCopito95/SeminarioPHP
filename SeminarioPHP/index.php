@@ -1,10 +1,3 @@
-<?php 
-//include ("BD.php");
-include ("validador.php");
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -46,21 +39,10 @@ include ("validador.php");
 
     <!-- seccion 2 -->
 
-    <!-- ERRORES -->
-    <div style="color: red;"> 
-      <?php
-        //recorro el array de errores para devolver si hay algun campo mal ingresado 
-        for ($i=0; $i < sizeof($error) ; $i++) { 
-          echo "Error: " . $error[$i]; ?>
-          <br> <?php
-        } 
-      ?> 
-    </div>
-
     <div class="section row2">
       <div id="container" align="center">
         <br>
-          <form id="regform" method="POST" action="index.php" onsubmit="<!--return(validarForm())-->">
+          <form id="regform" method="POST" action="validadorRegistro.php">
             <h2>¿Aún no tienes una cuenta? ¡Regístrate!</h2>
 
             <!-- required's comentados para prueba -->

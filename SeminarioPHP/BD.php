@@ -16,5 +16,5 @@ if ($conn->connect_error) {
 mysqli_select_db($conn,$nombre_de_la_base_de_datos);
 
 
-echo "Connected successfully";
-?> 
+// echo "Connected successfully";
+?>

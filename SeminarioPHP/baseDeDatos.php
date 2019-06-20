@@ -7,12 +7,11 @@ class BaseDeDatos {
 
     function __construct($conn){
     	$this->link = $conn;
-        echo "--base de datos creada--";
     }
 
     function getUser($user){
     	//$query = sprintf("SELECT * FROM usuarios WHERE nombreusuario='%s'",$user); //NO FUNCIONA
-    	$query = "SELECT * FROM seminarioPHP.usuarios WHERE nombreusuario='".$user."'"; // FUNCIONA
+    	$query = "SELECT * FROM usuarios WHERE nombreusuario='".$user."'"; // FUNCIONA
     	//$query = "SELECT * FROM seminarioPHP.usuarios WHERE nombre='Julieta'"; //FUNCIONA
     	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
     	//echo mysqli_num_rows($result);
@@ -32,11 +31,10 @@ class BaseDeDatos {
     }
 
     function newUser($nombre, $apellido,$email,$user,$pass){
-        $query = "INSERT INTO seminarioPHP.usuarios(apellido,nombre,email,nombreusuario,contrasenia,foto_contenido,foto_tipo)VALUES ('$apellido','$nombre','$email','$user','$pass','','')";
+        $query = "INSERT INTO usuarios(apellido,nombre,email,nombreusuario,contrasenia,foto_contenido,foto_tipo) VALUES ('$apellido','$nombre','$email','$user','$pass','','')";
         mysqli_query($this->link,$query) or die(mysqli_error($this->link));
     }
 
 }
 
 ?>
-
