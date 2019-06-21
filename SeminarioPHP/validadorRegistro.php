@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
     $bd = new BaseDeDatos($conn);
     $existe = $bd->getUser($_POST["user"]);
     //echo $existe[0];
-    if($existe[0] == '1'){ //si devuelve 1 significa que el usuario existe
+    if($existe[0]){ //si devuelve distinto de 0 o NULL significa que el usuario existe
       $error[]="El nombre de usuario ya esta en uso";
     }
 
@@ -41,10 +41,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
   if (!$validador->validarContrasenias($_POST["pass1"],$_POST["pass2"])){ 
     $error[]="Contraseñas incorrectas.";
   }
-
-//   for ($i=0; $i < sizeof($error) ; $i++) { 
-//       echo $error[$i]." ";
-//   } 
   
   // si el array de errores esta vacio, entonces direcciono a la pagina principal
   if(sizeof($error)==0){ // si el array de los errores no tiene elementos
@@ -58,8 +54,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
 
     header('Location: '."/principal.php");
     die();
-  } else {
-        header('Location: '."/index.php");
+  } 
+  else {
+    header('Location: '."/index.php");
+    die();
   }
 
 }
