@@ -24,7 +24,7 @@
         <nav> <!-- menu con los links -->
           <ul>
             <li>
-              <form action="#" method="post"> <!-- buscar -->
+              <form action="validadorLogueo.php" method="POST"> <!-- buscar -->
                 <fieldset>
                   <input type="text" name="username" placeholder="Nombre de usuario" required>
                   <input type="password" name="password" placeholder="Contraseña" required>
