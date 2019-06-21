@@ -52,11 +52,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
 
     $bd->newUser($_POST["nombre"],$_POST["apellido"],$_POST["email"],$_POST["user"],$_POST["pass1"]);
 
-    header('Location: '."/principal.php");
+    header('Location: '."principal.php");
     die();
   } 
   else {
-    header('Location: '."/index.php");
+    header('Location: '."index.php");
     die();
   }
 

@@ -4,10 +4,10 @@
   <head>
     <title>The Wall - Resultado de la búsqueda</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../style/css/layout.css" type="text/css">
-    <link rel="stylesheet" href="../style/css/profile.css" type="text/css">
-    <link rel="stylesheet" href="../style/css/tables.css" type="text/css">
-    <link rel="stylesheet" href="../style/css/pagination.css" type="text/css">
+    <link rel="stylesheet" href="style/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="style/css/profile.css" type="text/css">
+    <link rel="stylesheet" href="style/css/tables.css" type="text/css">
+    <link rel="stylesheet" href="style/css/pagination.css" type="text/css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -18,19 +18,19 @@
     <div class="section row1">
       <header id="header">
         <div id="hgroup">
-          <img src="../style/images/logo.png" />
-          <h1><a href="principal.html">The Wall</a></h1> <!-- titulo -->
+          <img src="style/images/logo.png" />
+          <h1><a href="principal.php">The Wall</a></h1> <!-- titulo -->
           <h2>Nueva red social - Conecta con tus amigos!</h2> <!-- subtitulo -->
         </div>
         <nav> <!-- menu con los links -->
           <ul>
-            <li><a href="principal.html">Inicio</a></li>
+            <li><a href="principal.php">Inicio</a></li>
             <li><div class="dropdown">
                 <a>Perfil</a>
                 <div class="dropdown-content">
-                <a href="perfil.html">Mi Perfil</a>
-                <a href="editar-perfil.html">Editar Perfil</a>
-                <a href="index.html">Cerrar Sesión</a>
+                <a href="perfil.php">Mi Perfil</a>
+                <a href="editar-perfil.php">Editar Perfil</a>
+                <a href="index.php">Cerrar Sesión</a>
                 </div>
                 </div>
               </li>
@@ -65,20 +65,20 @@
                     <th>Seguir / Dejar de seguir</th>
                   </tr>
                   <tr>
-                    <td><img src="../style/images/homero.png"/></td>
-                    <td><a href="usuario.html">@homeroS</a></td>
+                    <td><img src="style/images/homero.png"/></td>
+                    <td><a href="usuario.php">@homeroS</a></td>
                     <td>Homero Simpson</td>
                     <td><a href=""> Seguir</a></td>
                   </tr>
                   <tr>
-                    <td><img src="../style/images/lisa.png"/></td>
-                    <td><a href="usuario.html">@LisaS</a></td>
+                    <td><img src="style/images/lisa.png"/></td>
+                    <td><a href="usuario.php">@LisaS</a></td>
                     <td>Lisa Simpson</td>
                     <td><a href="">Seguir</a></td>
                   </tr>
                   <tr>
-                    <td><img src="../style/images/barto.jpg"/></td>
-                    <td><a href="usuario.html">@BartS</a></td>
+                    <td><img src="style/images/barto.jpg"/></td>
+                    <td><a href="usuario.php">@BartS</a></td>
                     <td>El Barto</td>
                     <td><a href="">Seguir</a></td>
                   </tr>

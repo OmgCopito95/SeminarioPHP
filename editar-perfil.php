@@ -2,14 +2,15 @@
 <html lang="en" dir="ltr">
 
   <head>
-    <title>The Wall</title>
+    <title>The Wall - Editar perfil</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../style/css/layout.css" type="text/css">
-    <link rel="stylesheet" href="../style/css/profile.css" type="text/css">
-    <link rel="stylesheet" href="../style/css/tables.css" type="text/css">
+    <link rel="stylesheet" href="style/css/layout.css" type="text/css">
+    <link rel="stylesheet" href="style/css/profile.css" type="text/css">
+    <link rel="stylesheet" href="style/css/tables.css" type="text/css">
+    <link rel="stylesheet" href="style/css/pagination.css" type="text/css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="../style/js/codigoJS.js"></script>
+
   </head>
 
   <body>
@@ -17,18 +18,28 @@
     <div class="section row1">
       <header id="header">
         <div id="hgroup">
-          <img src="../style/images/logo.png" />
-          <h1><a href="principal.html">The Wall</a></h1> <!-- titulo -->
+          <img src="style/images/logo.png" />
+          <h1><a href="principal.php">The Wall</a></h1> <!-- titulo -->
           <h2>Nueva red social - Conecta con tus amigos!</h2> <!-- subtitulo -->
         </div>
         <nav> <!-- menu con los links -->
           <ul>
+            <li><a href="principal.php">Inicio</a></li>
+            <li>
+              <div class="dropdown">
+                <a>Perfil</a>
+                <div class="dropdown-content">
+                <a href="perfil.php">Mi Perfil</a>
+                <a href="editar-perfil.php">Editar Perfil</a>
+                <a href="index.php">Cerrar Sesión</a>
+                </div>
+              </div>
+            </li>
             <li>
               <form action="#" method="post"> <!-- buscar -->
                 <fieldset>
-                  <input type="text" name="username" placeholder="Nombre de usuario" required>
-                  <input type="password" name="password" placeholder="Contraseña" required>
-                  <input type="submit" id="b_submit" value="Iniciar sesión">
+                  <input type="text" value="">
+                  <input type="submit" id="b_submit" value="Buscar">
                 </fieldset>
               </form>
             </li>
@@ -40,37 +51,38 @@
     <!-- seccion 2 -->
     <div class="section row2">
       <div id="container" align="center">
+
         <br>
-          <form id="regform" action="" onsubmit="return(validarForm())">
-            <h2>¿Aún no tienes una cuenta? ¡Regístrate!</h2>
+          <form id="regform" style="border: 0px;" action="" onsubmit="return(validarForm())">
+            <h1 class="title-pen">Modificar perfil</h1></h2>
 
             <div class="formfield">
               <label for="nombre"><b>Nombre</b></label>
-              <input type="text" id="nombre" required>
+              <input type="text" id="nombre" placeholder="Ned" required>
             </div>
 
             <div class="formfield">
               <label for="apellido"><b>Apellido</b></label>
-              <input type="text" id="apellido" required>
+              <input type="text" id="apellido" placeholder="Flanders" required>
             </div>
 
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
-              <input type="text" id="email" required>
+              <input type="text" id="email" placeholder="ned.flanders@mail.com" required>
             </div>
 
             <div class="formfield">
-              <label for="username"><b>Nombre de usuario</b></label>
-              <input type="text" id="username" required>
+              <label for="password1"><b>Contraseña actual</b></label>
+              <input type="password" id="passwordActual" required>
             </div>
 
             <div class="formfield">
-              <label for="password1"><b>Contraseña</b></label>
+              <label for="password1"><b>Nueva contraseña</b></label>
               <input type="password" id="password1" required>
             </div>
 
             <div class="formfield">
-              <label for="password2"><b>Repita su contraseña</b></label>
+              <label for="password2"><b>Repita su contraseña nueva</b></label>
               <input type="password" id="password2" required>
             </div>
 
@@ -79,11 +91,12 @@
               <input type="file" id="pic" accept="image/*" required>
             </div>
 
-            <button id="regbutton" type="submit">Registrarme</button>
+            <button  id="regbutton" type="submit">Guardar cambios</button>
           </form>
         <br>
 
       </div>
+      <br>
     </div> <!-- fin seccion 2 -->
 
     <!-- seccion 3 - footer -->
@@ -93,6 +106,9 @@
         <p class="fo_right">Seminario PHP 2019 </p>
       </footer>
     </div>
+
+
+
 
   </body>
 </html>
