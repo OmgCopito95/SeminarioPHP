@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -42,11 +46,14 @@
     <!-- ERRORES -->
     <div style="color: red;"> 
       <?php
-        //recorro el array de errores para devolver si hay algun campo mal ingresado 
-        for ($i=0; $i < sizeof($error) ; $i++) { 
-          echo "Error: " . $error[$i]; ?>
-          <br> <?php
-        } 
+        //recorro el array de errores para devolver si hay algun campo mal ingresado
+        if (!empty($_SESSION["errores"])){
+          $error = $_SESSION["errores"];
+          for ($i=0; $i < sizeof($error) ; $i++) { 
+            echo "Error: " . $error[$i]."<br>";
+          }
+        }    
+         
       ?> 
     </div>
 
