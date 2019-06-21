@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
     }
   }
   // no informo nada xq por seguridad no debo decirle que es lo que esta mal
-  header('Location: '."/index.php");
+  header('Location: '."index.php");
   die();
 }
 ?>
