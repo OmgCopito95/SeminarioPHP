@@ -1,3 +1,10 @@
+<?php
+  session_start(); //inicio la sesion 
+  if (!$_SESSION["logueado"]){ //verifico si el usuario esta logueado puede ver la vista
+      header('Location: '."index.php"); // si no esta logueado lo redirecciona al index
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
