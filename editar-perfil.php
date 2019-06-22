@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if ($_SESSION["logueado"] == false) {
+    header('Location: '."index.php");
+    die();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -53,42 +61,42 @@
       <div id="container" align="center">
 
         <br>
-          <form id="regform" style="border: 0px;" action="" onsubmit="return(validarForm())">
+          <form id="regform" style="border: 0px;" action="validadorEditarPerfil.php" onsubmit="return(validarForm())">
             <h1 class="title-pen">Modificar perfil</h1></h2>
 
             <div class="formfield">
               <label for="nombre"><b>Nombre</b></label>
-              <input type="text" id="nombre" placeholder="Ned" required>
+              <input type="text" id="nombre" placeholder="Ned">
             </div>
 
             <div class="formfield">
               <label for="apellido"><b>Apellido</b></label>
-              <input type="text" id="apellido" placeholder="Flanders" required>
+              <input type="text" id="apellido" placeholder="Flanders">
             </div>
 
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
-              <input type="text" id="email" placeholder="ned.flanders@mail.com" required>
+              <input type="text" id="email" placeholder="ned.flanders@mail.com">
             </div>
 
             <div class="formfield">
               <label for="password1"><b>Contraseña actual</b></label>
-              <input type="password" id="passwordActual" required>
+              <input type="password" id="passwordActual">
             </div>
 
             <div class="formfield">
               <label for="password1"><b>Nueva contraseña</b></label>
-              <input type="password" id="password1" required>
+              <input type="password" id="password1">
             </div>
 
             <div class="formfield">
               <label for="password2"><b>Repita su contraseña nueva</b></label>
-              <input type="password" id="password2" required>
+              <input type="password" id="password2">
             </div>
 
             <div class="formfield">
               <label for="pic"><b>Imagen de perfil</b></label>
-              <input type="file" id="pic" accept="image/*" required>
+              <input type="file" id="pic" accept="image/*">
             </div>
 
             <button  id="regbutton" type="submit">Guardar cambios</button>
