@@ -84,18 +84,18 @@ if ($_SESSION["logueado"] == true){
       // for ($i=0; $i < sizeof($error); $i++) { 
       //   echo $error[0];
       // }
-      header('Location: '."/index.php");
+      header('Location: '."/editar-perfil.php");
       die();
     }
 
   }
   else {
-    echo "Malo";
+    echo "No seas malo";
   }
 }
 else {
   $_SESSION["errores"] = "Sesion no iniciada.";
-  header('Location: '."/peru.php");
+  header('Location: '."/index.php");
   die();
 }
 ?>

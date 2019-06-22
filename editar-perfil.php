@@ -56,6 +56,20 @@
       </header>
     </div> <!-- fin seccion 1 -->
 
+    <!-- ERRORES -->
+    <div style="color: red;"> 
+      <?php
+        //recorro el array de errores para devolver si hay algun campo mal ingresado
+        if (!empty($_SESSION["errores"])){
+          $error = $_SESSION["errores"];
+          for ($i=0; $i < sizeof($error) ; $i++) { 
+            echo "Error: ".$error[$i]."<br>";
+          }
+        }    
+         
+      ?> 
+    </div>
+
     <!-- seccion 2 -->
     <div class="section row2">
       <div id="container" align="center">
