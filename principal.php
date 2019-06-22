@@ -3,6 +3,7 @@
   if (!$_SESSION["logueado"]){ //verifico si el usuario esta logueado puede ver la vista
       header('Location: '."index.php"); // si no esta logueado lo redirecciona al index
   }
+  include ("clasePrincipal.php"); // muestra los datos para la vista
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +79,7 @@
         <br>
         <div class="user-profile">
           <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>"/>
-          <div class="name">Ned Flanders</div>
+          <div class="name"><?php echo $_SESSION["nombre"]. " " . $_SESSION["apellido"]; ?></div>
           <div class="input">
             <form action="publicarMensaje.php" method="post" enctype="multipart/form-data">
               <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required name="mensaje"></textarea>
