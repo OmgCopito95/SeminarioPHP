@@ -60,6 +60,8 @@ if ($_SESSION["logueado"] == false){
       $_SESSION["usuario"] = $_POST["user"]; // guardo el nombre de usuario
       $existe = $bd->getUser($_POST["user"]);
       $_SESSION["id"] = $existe[0];
+      $_SESSION["nombre"] = $existe[2] ; //guardo el nombre del usuario
+      $_SESSION["apellido"]= $existe[1]; // guardo el apellido del usuario
       
       header('Location: '."principal.php");
     } 
