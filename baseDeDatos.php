@@ -51,6 +51,13 @@ class BaseDeDatos {
 		}
 	}
 
+
+	function publicarMensaje($mensaje, $userID){
+        //$mysqltime = date("Y-m-d H:i:s");
+        //echo $mysqltime;
+        $query = "INSERT INTO mensaje (texto,imagen_contenido,imagen_tipo,usuarios_id,fechayhora)VALUES('$mensaje', '','',$userID,'')";
+        mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+    }
 }
 
 ?>
