@@ -75,7 +75,7 @@
       <div id="container" align="center">
 
         <br>
-          <form id="regform" style="border: 0px;" method="POST" action="validadorEditarPerfil.php">  <!--  onsubmit="return(validarForm())" -->
+          <form id="regform" style="border: 0px;" method="POST" action="validadorEditarPerfil.php" onsubmit="return(validarForm())">
             <h1 class="title-pen">Modificar perfil</h1></h2>
 
             <div class="formfield">
