@@ -71,14 +71,6 @@ class BaseDeDatos {
         $query = "INSERT INTO mensaje (texto,imagen_contenido,imagen_tipo,usuarios_id,fechayhora)VALUES('$mensaje', '$imagen','$tipo_imagen',$userID,'')";
         mysqli_query($this->link,$query) or die(mysqli_error($this->link));
     }
-
-    function mostrarImagen($id){
-    	$query = "SELECT foto_contenido, foto_tipo FROM usuarios WHERE id='".$id."'"; 
-
-		$result = mysqli_query($this->link, $query) or die(mysqli_error($this->link));
-		$result = mysqli_fetch_array($result); 
-		return $result;
-    }
 }
 
 ?>
