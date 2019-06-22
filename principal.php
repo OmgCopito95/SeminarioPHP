@@ -77,7 +77,7 @@
         <h1 class="title-pen"> Últimas Actualizaciones</h1>
         <br>
         <div class="user-profile">
-          <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>" />
+          <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>"/>
           <div class="name">Ned Flanders</div>
           <div class="input">
             <form action="publicarMensaje.php" method="post" enctype="multipart/form-data">
