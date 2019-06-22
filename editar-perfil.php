@@ -61,45 +61,45 @@
       <div id="container" align="center">
 
         <br>
-          <form id="regform" style="border: 0px;" action="validadorEditarPerfil.php" onsubmit="return(validarForm())">
+          <form id="regform" style="border: 0px;" method="POST" action="validadorEditarPerfil.php">  <!--  onsubmit="return(validarForm())" -->
             <h1 class="title-pen">Modificar perfil</h1></h2>
 
             <div class="formfield">
               <label for="nombre"><b>Nombre</b></label>
-              <input type="text" id="nombre" placeholder="Ned">
+              <input type="text" name="nombre" id="nombre" placeholder="Ned">
             </div>
 
             <div class="formfield">
               <label for="apellido"><b>Apellido</b></label>
-              <input type="text" id="apellido" placeholder="Flanders">
+              <input type="text" name="apellido" id="apellido" placeholder="Flanders">
             </div>
 
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
-              <input type="text" id="email" placeholder="ned.flanders@mail.com">
+              <input type="text" name="email" id="email" placeholder="ned.flanders@mail.com">
             </div>
 
             <div class="formfield">
               <label for="password1"><b>Contraseña actual</b></label>
-              <input type="password" id="passwordActual">
+              <input type="password" name="passwordActual" id="passwordActual">
             </div>
 
             <div class="formfield">
               <label for="password1"><b>Nueva contraseña</b></label>
-              <input type="password" id="password1">
+              <input type="password" name="password1" id="password1">
             </div>
 
             <div class="formfield">
               <label for="password2"><b>Repita su contraseña nueva</b></label>
-              <input type="password" id="password2">
+              <input type="password" name="password2" id="password2">
             </div>
 
             <div class="formfield">
               <label for="pic"><b>Imagen de perfil</b></label>
-              <input type="file" id="pic" accept="image/*">
+              <input type="file" name="pic" id="pic" accept="image/*">
             </div>
 
-            <button  id="regbutton" type="submit">Guardar cambios</button>
+            <button name="savechanges" id="editbutton" type="submit">Guardar cambios</button>
           </form>
         <br>
 
