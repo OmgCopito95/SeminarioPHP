@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include ("claseValidador.php");
 include ("baseDeDatos.php");
 include ("BD.php");
@@ -51,11 +53,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
     //falta guardar la imagen del usuario.
 
     $bd->newUser($_POST["nombre"],$_POST["apellido"],$_POST["email"],$_POST["user"],$_POST["pass1"]);
+    
+    $_SESSION["logueado"] = true;
 
     header('Location: '."principal.php");
     die();
   } 
   else {
+    $_SESSION["errores"] = $error; //guarda los errores en la sesion del usuario para poder usar la variable en la vista
     header('Location: '."index.php");
     die();
   }
