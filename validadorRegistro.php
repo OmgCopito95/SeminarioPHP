@@ -60,7 +60,7 @@ if ($_SESSION["logueado"] == false){
       $_SESSION["usuario"] = $_POST["user"]; // guardo el nombre de usuario
       $_SESSION["id"] = $existe[0];
       
-      //header('Location: '."principal.php");
+      header('Location: '."principal.php");
     } 
     else {
       $_SESSION["errores"] = $error; //guarda los errores en la sesion del usuario para poder usar la variable en la vista
