@@ -9,7 +9,7 @@ if ($_SESSION["logueado"] == true){
   // include ("subirImagenes.php");
 
   $error = array(); // creo un array que me guarde los mensajes de error
-  // $nuevosdatos = array(); // guardo el/los dato/s a editar para enviar array como parametro
+  $nuevosdatos = array(); // guardo el/los dato/s a editar para enviar array como parametro
 
   if ($_SERVER["REQUEST_METHOD"]=="POST") { // si se completo el formulario
     $validador = new Validador(); // instancio objeto validador
@@ -68,29 +68,38 @@ if ($_SESSION["logueado"] == true){
       }
     }
 
-    $_SESSION["errores"] = $error;
-    // si el array de errores esta vacio, entonces direcciono a la pagina principal
-    if (sizeof($error)==0) { // si el array de los errores no tiene elementos
-      //hay que crear el usuario e ir a la pagina principal
-      $bd = new BaseDeDatos($conn);
-      //falta guardar la imagen del usuario.
-
-      $bd->editUser($nuevosdatos, $_SESSION["usuario"]);
-
-      header('Location: '."/principal.php");
-      die();
+    if (sizeof($nuevosdatos) > 0) {
+      $_SESSION["errores"] = $error;
+      // si el array de errores esta vacio, entonces direcciono a la pagina principal
+      if (sizeof($error)==0) { // si el array de los errores no tiene elementos
+        //hay que crear el usuario e ir a la pagina principal
+        $bd = new BaseDeDatos($conn);
+        //falta guardar la imagen del usuario.
+  
+        $bd->editUser($nuevosdatos, $_SESSION["usuario"]);
+  
+        header('Location: '."/principal.php");
+        die();
+      }
+      else {
+        // for ($i=0; $i < sizeof($error); $i++) { 
+        //   echo $error[0];
+        // }
+        header('Location: '."/editar-perfil.php");
+        die();
+      }
     }
     else {
-      // for ($i=0; $i < sizeof($error); $i++) { 
-      //   echo $error[0];
-      // }
+      $_SESSION["errores"] = "No ha ingresado ningun dato para actualizar.";
       header('Location: '."/editar-perfil.php");
       die();
     }
-
   }
   else {
-    echo "No seas malo";
+    // tendria que hacer algo raro para que no sea un POST, pero por si acaso..
+    $_SESSION["errores"] = "No seas malo";
+    header('Location: '."/editar-perfil.php");
+    die();
   }
 }
 else {

@@ -41,6 +41,16 @@ class Validador {
         }
     }
 
+    // FALTA HACERRR. SOLO PUSE ESTO PARA IR PROBANDO LO DEMAS
+    function validarBusqueda($buscar){
+        if ($buscar == "a"){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
 
 ?>
