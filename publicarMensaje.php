@@ -13,7 +13,7 @@
 			if (strlen($mensaje) <= 140){ // verifico que el texto ingresado no sea mayor a 140 caracteres
 				//falta la imagen
 				$bd = new BaseDeDatos($conn);
-				$bd->publicarMensaje($mensaje,1); // la guardo en la base de datos
+				$bd->publicarMensaje($mensaje,$_SESSION["id"],'',''); // la guardo en la base de datos
 			}else{
 				$_SESSION["errores"]=array("Mensaje mayor a 140 caracteres.");
 			}
