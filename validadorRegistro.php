@@ -58,6 +58,7 @@ if ($_SESSION["logueado"] == false){
       
       $_SESSION["logueado"] = true; //indico que inicio sesion
       $_SESSION["usuario"] = $_POST["user"]; // guardo el nombre de usuario
+      $existe = $bd->getUser($_POST["user"]);
       $_SESSION["id"] = $existe[0];
       
       header('Location: '."principal.php");
