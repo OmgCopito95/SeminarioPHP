@@ -31,13 +31,13 @@ if ($_SESSION["logueado"] == false){
       }
     }
     // por seguridad no debo decirle que es lo que esta mal
-    $_SESSION["errores"] = "Usuario o contraseña incorrectos.";
+    $_SESSION["errores"] = array("Usuario o contraseña incorrectos.");
     header('Location: '."index.php");
     die();
   }
 }
 else {
-  $_SESSION["errores"] = "Sesion ya iniciada.";
+  $_SESSION["errores"] = array("Sesion ya iniciada.");
   header('Location: '."index.php");
   die();
 }
