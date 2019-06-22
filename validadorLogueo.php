@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ("claseValidador.php");
 include ("baseDeDatos.php");
 include ("BD.php");
@@ -13,9 +14,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
 
     if ($existe[0]){
         // verifico que las contrasenias cumplan FALTA MEJORAR ESTO ASI NO PASO DOS VECES EL PASS
-        if ($validador->validarContrasenias($_POST["password"],$_POST["password"])){ 
+        if ($validador->validarContrasenias($_POST["password"],$_POST["password"])){
+        echo($bd->checkPassword($_POST["password"], $_POST["username"]));
+        //echo $bd; 
             if ($bd->checkPassword($_POST["password"], $_POST["username"])) {
-                header('Location: '."/principal.php");
+                $_SESSION["logueado"] = true;
+                header('Location: '."principal.php");
                 die();
             }
         }
