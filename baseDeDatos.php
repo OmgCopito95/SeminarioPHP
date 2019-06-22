@@ -46,7 +46,24 @@ class BaseDeDatos {
 			return false;
 		}
 	}
+	
+	function search($buscar) {
+		$query = "SELECT nombre, apellido, email, nombreusuario, foto_contenido, foto_tipo
+				FROM usuarios WHERE (nombreusuario LIKE '%".$buscar."%')
+				OR (nombre LIKE '%".$buscar."%') OR (apellido LIKE '%".$buscar."%')";
 
+		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		//recupera todas las filas de resultados como un array de arrays
+		$resultado = mysqli_fetch_all($result);
+		// mysqli_close($link);
+		// for ($i=0; $i < sizeof($resultado) ; $i++) { 
+		// 	for ($j=0; $j < sizeof($resultado[$i]); $j++) { 
+		// 		echo $resultado[$i][$j]." - ";
+		// 	}
+		// 	echo " /////// ";
+		// }
+    	return $resultado;
+	}
 
 	function publicarMensaje($mensaje, $userID, $imagen, $tipo_imagen){
         //$mysqltime = date("Y-m-d H:i:s");
