@@ -15,7 +15,7 @@
 				$bd = new BaseDeDatos($conn);
 				$bd->publicarMensaje($mensaje,1); // la guardo en la base de datos
 			}else{
-				$_SESSION["errores"]="Mensaje mayor a 140 caracteres.";
+				$_SESSION["errores"]=array("Mensaje mayor a 140 caracteres.");
 			}
 
     		header('Location: '."principal.php");
