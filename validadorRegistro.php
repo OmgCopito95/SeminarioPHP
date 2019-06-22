@@ -53,7 +53,7 @@ if ($_SESSION["logueado"] == false){
 
       //echo $tipo_imagen;
       //falta guardar la imagen del usuario.
-      echo $contents;
+      //echo $contents;
       $bd->newUser($_POST["nombre"],$_POST["apellido"],$_POST["email"],$_POST["user"],$_POST["pass1"],$contents,$tipo_imagen);
       
       $_SESSION["logueado"] = true; //indico que inicio sesion
