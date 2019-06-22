@@ -13,8 +13,9 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
     $existe = $bd->getUser($_POST["username"]);
 
     if ($existe[0]){
-        // verifico que las contrasenias cumplan FALTA MEJORAR ESTO ASI NO PASO DOS VECES EL PASS
-        if ($validador->validarContrasenias($_POST["password"],$_POST["password"])){
+        // verifico que la contrasenia cumpla
+        $pass = $_POST["password"];
+        if ($validador->validarContrasenias($pass,$pass)){ // se lo pasa dos veces para reutilizar metodo
         echo($bd->checkPassword($_POST["password"], $_POST["username"]));
         //echo $bd; 
             if ($bd->checkPassword($_POST["password"], $_POST["username"])) {
