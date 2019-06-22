@@ -16,8 +16,8 @@ class BaseDeDatos {
     	return mysqli_fetch_array($result);
     }
 
-    function newUser($nombre, $apellido,$email,$user,$pass){
-        $query = "INSERT INTO usuarios(apellido,nombre,email,nombreusuario,contrasenia,foto_contenido,foto_tipo) VALUES ('$apellido','$nombre','$email','$user','$pass','','')";
+    function newUser($nombre, $apellido,$email,$user,$pass,$imagen,$tipo_imagen){
+        $query = "INSERT INTO usuarios(apellido,nombre,email,nombreusuario,contrasenia,foto_contenido,foto_tipo) VALUES ('$apellido','$nombre','$email','$user','$pass','$imagen','tipo_imagen')";
         mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 	}
 	

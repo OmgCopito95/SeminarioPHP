@@ -4,6 +4,7 @@ session_start();
 include ("claseValidador.php");
 include ("baseDeDatos.php");
 include ("BD.php");
+include ("subirImagenes.php");
 
 $error = array(); // creo un array que me guarde los mensajes de error
 
@@ -36,7 +37,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
     if($existe[0]){ //si devuelve distinto de 0 o NULL significa que el usuario existe
       $error[]="El nombre de usuario ya esta en uso";
     }
-
   }
 
   // verifico que las contrasenias cumplan
@@ -45,14 +45,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
   }
   
   // si el array de errores esta vacio, entonces direcciono a la pagina principal
-  if(sizeof($error)==0){ // si el array de los errores no tiene elementos
+  if((sizeof($error)==0) &&($imagenSubida == 1)){ // si el array de los errores no tiene elementos
     //hay que crear el usuario e ir a la pagina principal
 
     $bd = new BaseDeDatos($conn);
 
+    //echo $tipo_imagen;
     //falta guardar la imagen del usuario.
 
-    $bd->newUser($_POST["nombre"],$_POST["apellido"],$_POST["email"],$_POST["user"],$_POST["pass1"]);
+    $bd->newUser($_POST["nombre"],$_POST["apellido"],$_POST["email"],$_POST["user"],$_POST["pass1"],$archivo,$tipo_imagen);
     
     $_SESSION["logueado"] = true;
 
