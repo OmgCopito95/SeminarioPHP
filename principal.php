@@ -55,6 +55,19 @@
       </header>
     </div> <!-- fin seccion 1 -->
 
+    <div style="color: red;"> 
+      <?php
+        //recorro el array de errores para devolver si hay algun campo mal ingresado
+        if (!empty($_SESSION["errores"])){
+          $error[] = $_SESSION["errores"];
+          for ($i=0; $i < sizeof($error) ; $i++) { 
+            echo "Error: " . $error[$i]."<br>";
+          }
+        }    
+         
+      ?> 
+    </div>
+    
     <!-- seccion 2 -->
     <div class="section row2">
       <div id="container">
@@ -62,11 +75,11 @@
         <h1 class="title-pen"> Últimas Actualizaciones</h1>
         <br>
         <div class="user-profile">
-          <img class="avatar" src="style/images/persona3.jpg" />
+          <img class="avatar" src="mostrarImagen.php?id=8" />
           <div class="name">Ned Flanders</div>
           <div class="input">
-            <form action="" method="post">
-              <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required></textarea>
+            <form action="publicarMensaje.php" method="post">
+              <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required name="mensaje"></textarea>
               <input type="file" name="pic" accept="image/*">
               <button class="button button2 " type="submit"> Publicar </button>
             </form>
