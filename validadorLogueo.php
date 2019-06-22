@@ -3,8 +3,6 @@ include ("claseValidador.php");
 include ("baseDeDatos.php");
 include ("BD.php");
 
-$error = array(); // creo un array que me guarde los mensajes de error
-
 if ($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
   $validador = new Validador(); // instancio objeto validador
 
