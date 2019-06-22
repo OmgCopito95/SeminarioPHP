@@ -58,16 +58,18 @@
     <div style="color: red;"> 
       <?php
         //recorro el array de errores para devolver si hay algun campo mal ingresado
+        //print_r($_SESSION);
         if (!empty($_SESSION["errores"])){
-          $error[] = $_SESSION["errores"];
+          $error = $_SESSION["errores"];
           for ($i=0; $i < sizeof($error) ; $i++) { 
             echo "Error: " . $error[$i]."<br>";
           }
+          unset($_SESSION["errores"]); //limpia los errores despues de haberlos escrito
         }    
-         
+        
       ?> 
     </div>
-    
+
     <!-- seccion 2 -->
     <div class="section row2">
       <div id="container">
