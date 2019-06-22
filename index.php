@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if ($_SESSION["logueado"] == true) {
+  if (!empty($_SESSION["logueado"])) {
     header('Location: '."principal.php");
     die();
   }
