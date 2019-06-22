@@ -1,5 +1,9 @@
 <?php
   session_start();
+  if ($_SESSION["logueado"] == true) {
+    header('Location: '."principal.php");
+    die();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +52,7 @@
       <?php
         //recorro el array de errores para devolver si hay algun campo mal ingresado
         if (!empty($_SESSION["errores"])){
-          $error = $_SESSION["errores"];
+          $error[] = $_SESSION["errores"];
           for ($i=0; $i < sizeof($error) ; $i++) { 
             echo "Error: " . $error[$i]."<br>";
           }
