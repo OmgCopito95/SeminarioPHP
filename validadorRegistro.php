@@ -1,6 +1,7 @@
 <?php
 session_start();
 if ($_SESSION["logueado"] == false){
+
   include ("claseValidador.php");
   include ("baseDeDatos.php");
   include ("BD.php");
@@ -52,18 +53,20 @@ if ($_SESSION["logueado"] == false){
 
       //echo $tipo_imagen;
       //falta guardar la imagen del usuario.
-
-      $bd->newUser($_POST["nombre"],$_POST["apellido"],$_POST["email"],$_POST["user"],$_POST["pass1"],$archivo,$tipo_imagen);
+      //echo $contents;
+      $bd->newUser($_POST["nombre"],$_POST["apellido"],$_POST["email"],$_POST["user"],$_POST["pass1"],$contents,$tipo_imagen);
       
-      $_SESSION["logueado"] = true;
-      $_SESSION["usuario"] = $user;
+      $_SESSION["logueado"] = true; //indico que inicio sesion
+      $_SESSION["usuario"] = $_POST["user"]; // guardo el nombre de usuario
+      $existe = $bd->getUser($_POST["user"]);
+      $_SESSION["id"] = $existe[0];
+      
       header('Location: '."principal.php");
-      die();
     } 
     else {
       $_SESSION["errores"] = $error; //guarda los errores en la sesion del usuario para poder usar la variable en la vista
       header('Location: '."index.php");
-      die();
+
     }
   }
 }

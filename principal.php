@@ -77,10 +77,10 @@
         <h1 class="title-pen"> Últimas Actualizaciones</h1>
         <br>
         <div class="user-profile">
-          <img class="avatar" src="mostrarImagen.php?id=8" />
+          <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>" />
           <div class="name">Ned Flanders</div>
           <div class="input">
-            <form action="publicarMensaje.php" method="post">
+            <form action="publicarMensaje.php" method="post" enctype="multipart/form-data">
               <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required name="mensaje"></textarea>
               <input type="file" name="pic" accept="image/*">
               <button class="button button2 " type="submit"> Publicar </button>
