@@ -94,6 +94,16 @@ if ($_SESSION["logueado"] == true){
         //falta guardar la imagen del usuario.
   
         $bd->editUser($nuevosdatos, $_SESSION["usuario"]);
+
+        if (!empty($nuevosdatos["nombre"])) {
+          $_SESSION["nombre"] = $nuevosdatos["nombre"];
+        }
+        if (!empty($nuevosdatos["apellido"])) {
+          $_SESSION["apellido"] = $nuevosdatos["apellido"];
+        }
+        if (!empty($nuevosdatos["mail"])) {
+          $_SESSION["mail"] = $nuevosdatos["mail"];
+        }
   
         header('Location: '."principal.php");
         die();
