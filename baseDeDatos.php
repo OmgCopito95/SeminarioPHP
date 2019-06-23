@@ -89,8 +89,10 @@ class BaseDeDatos {
 		return $result;
     }
 
-    function getMensajes(){ // devuelve los ultimos 10 mensajes publicados
-    	$query = "SELECT * FROM mensaje ORDER BY id DESC limit 10";
+    function getMensajesSeguidores($id){ // devuelve los ultimos 10 mensajes publicados por los seguidores
+    	$query = "SELECT msj.* from `siguiendo` as sig INNER join `mensaje` as msj on msj.usuarios_id = sig.usuarioseguido_id INNER JOIN `usuarios`as us on us.id=sig.usuarios_id WHERE us.id=$id ORDER by id desc limit 10";
+
+
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
     	return $resultado;
@@ -108,6 +110,19 @@ class BaseDeDatos {
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));		
     }
 
+    function getSeguidos($id){
+    	$query = "SELECT us.* from  `usuarios` as us INNER JOIN  `siguiendo` as sig on us.id = sig.usuarioseguido_id where sig.usuarios_id = $id";
+		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		$resultado = mysqli_fetch_all($result); // me guardo los datos de los usuarios con todas sus filas
+    	return $resultado;
+    }
+
+    function getCantidadMGxMensaje($idMensaje){
+    	$query = "SELECT count(mensaje_id) from me_gusta where mensaje_id=$idMensaje";
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link)); 
+    	$result = mysqli_fetch_array($result); 
+		return $result;
+    }
 }
 
 ?>

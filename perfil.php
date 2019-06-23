@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="style/css/tables.css" type="text/css">
     <link rel="stylesheet" href="style/css/pagination.css" type="text/css">
     <!-- iconos -->
-    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="style/js/codigoJS.js"></script>
 
   </head>
@@ -114,7 +114,6 @@
                     <!-- FALTAN LOS ME GUSTA! -->
                     <td><a href=""><i class="fas fa-thumbs-up"></i> 12</a></td>
 
-                    <!-- FALTA EL BORRAR MENSAJE -->
                     <?php
                     echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]. "&idUsuario=". $_SESSION["id"]."'><i class='fas fa-trash-alt'></i></a></td>
                   </tr>" ?>
@@ -144,25 +143,18 @@
               <td>
                 <table id="tablas">
                   <tr>
-                    <th>Usuario</th>
+                    <th>Nombre Usuario</th>
                     <th>Seguido</th>
                   </tr>
-                  <tr>
-                    <td>hombreAbeja</td>
-                    <td><a href="">Dejar de Seguir</a></td>
-                  </tr>
-                  <tr>
-                    <td>Skinner</td>
-                    <td><a href="">Dejar de Seguir</a></td>
-                  </tr>
-                  <tr>
-                    <td>rafaaa</td>
-                    <td><a href="">Dejar de Seguir</a></td>
-                  </tr>
-                  <tr>
-                    <td>smithers</td>
-                    <td><a href="">Dejar de Seguir</a></td>
-                  </tr>
+                  <?php
+                  $seguidos = $info -> getSeguidos($_SESSION["id"]);
+                    for ($i=0; $i < sizeof($seguidos); $i++) { 
+                      echo "<tr>";
+                      echo "<td>" . $seguidos[$i][4] . "</td>";
+                      echo "<td><a href=''> Dejar de Seguir </a></td>";
+                      echo "</tr>";
+                    }
+                  ?>
                 </table>
               </td>
             </tr>

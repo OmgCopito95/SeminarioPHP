@@ -8,8 +8,12 @@ class MiPerfil {
     	$this -> bd = new BaseDeDatos($conn);
     }
     function getUltimosMensajes($id){
-    	$mensajes = $this -> bd->getMensajesByID($id); // recibe los ultimos 10 mensajes
-    	//print_r($mensajes);
+    	$mensajes = $this -> bd->getMensajesByID($id); // ultimos 10 mensajes
+    	return $mensajes;
+    }
+
+    function getSeguidos($id){
+    	$mensajes = $this -> bd->getSeguidos($id); // lista de seguidos
     	return $mensajes;
     }
 
