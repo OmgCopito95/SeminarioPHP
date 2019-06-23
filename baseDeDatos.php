@@ -97,7 +97,8 @@ class BaseDeDatos {
 	function publicarMensaje($mensaje, $userID, $imagen, $tipo_imagen){
         //$mysqltime = date("Y-m-d H:i:s");
         //echo $mysqltime;
-        $query = "INSERT INTO mensaje (texto,imagen_contenido,imagen_tipo,usuarios_id,fechayhora)VALUES('$mensaje', '$imagen','$tipo_imagen',$userID,'')";
+        $date = date('Y-m-d H:i:s');
+        $query = "INSERT INTO mensaje (texto,imagen_contenido,imagen_tipo,usuarios_id,fechayhora)VALUES('$mensaje', '$imagen','$tipo_imagen',$userID,'$date')";
         mysqli_query($this->link,$query) or die(mysqli_error($this->link));
     }
 
