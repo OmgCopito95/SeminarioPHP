@@ -115,8 +115,9 @@
                     <td><a href=""><i class="fas fa-thumbs-up"></i> 12</a></td>
 
                     <!-- FALTA EL BORRAR MENSAJE -->
-                    <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                  </tr>
+                    <?php
+                    echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]. "&idUsuario=". $_SESSION["id"]."'><i class='fas fa-trash-alt'></i></a></td>
+                  </tr>" ?>
                   <?php } ?>
                   </table>
               </td>
