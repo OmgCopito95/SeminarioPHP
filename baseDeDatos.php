@@ -89,12 +89,20 @@ class BaseDeDatos {
 		return $result;
     }
 
-    function getMensajes(){
+    function getMensajes(){ // devuelve los ultimos 10 mensajes publicados
     	$query = "SELECT * FROM mensaje ORDER BY id DESC limit 10";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
     	return $resultado;
     }
+
+    function getMensajesByID($id){ // devuelve los ultimos 10 mensajes publicados por el usuario
+    	$query = "SELECT * FROM mensaje WHERE usuarios_id=$id ORDER BY id DESC limit 10";
+		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
+    	return $resultado;
+    }
+
 }
 
 ?>
