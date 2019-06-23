@@ -117,13 +117,11 @@
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
                     $usuario = $info -> getUser($mensajes[$i][4]); // datos del usuario duenio del msj
                     echo "<td> <a href=''> @" . $usuario[4] . "</a> </td>";
-                    
-                    echo "<td><img src='mostrarImagen.php?id=".$usuario[0]."'/></td>"; ?>
-
-                    <!-- FALTAN LOS ME GUSTA! -->
-                    <td><a href=""><i class="fas fa-thumbs-up"></i> 12</a></td>
-                  </tr>
-                  <?php } ?>
+                    echo "<td><img src='mostrarImagen.php?id=".$usuario[0]."'/></td>";
+                    $cant = $info -> getCantidadMG($mensajes[$i][0]); //le paso id del mensaje
+                    echo "<td><a href=''><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
+                    echo "</tr>";
+                  }?>
                 </table>
             </td>
           </tr>

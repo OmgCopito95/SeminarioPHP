@@ -16,7 +16,11 @@ class Principal {
     function getUser($id){
     	$usuario = $this -> bd -> getUserByID($id); // recibe usuario con id
     	return $usuario;
+    }
 
+    function getCantidadMG($idMensaje){
+        $cant = $this -> bd -> getCantidadMGxMensaje($idMensaje);
+        return $cant;
     }
 
 }
