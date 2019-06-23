@@ -18,7 +18,7 @@ class BaseDeDatos {
     	return $resultado;
     }
 
-     function getUserByID($id){ // recibe el nombre de usuario
+     function getUserByID($id){ // recibe el id de usuario
     	$query = "SELECT * FROM usuarios WHERE id='".$id."'";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		//recupera una fila de resultado como un array
@@ -92,7 +92,7 @@ class BaseDeDatos {
     function getMensajes(){
     	$query = "SELECT * FROM mensaje ORDER BY id DESC limit 10";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
-		$resultado = mysqli_fetch_all($result);
+		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
     	return $resultado;
     }
 }

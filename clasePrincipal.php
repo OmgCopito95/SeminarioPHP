@@ -9,15 +9,12 @@ class Principal {
     	$this -> bd = new BaseDeDatos($conn);
     }
     function getUltimosMensajes(){
-    	$mensajes = $this -> bd->getMensajes();
-    	//print_r($mensajes);
+    	$mensajes = $this -> bd->getMensajes(); // recibe los ultimos 10 mensajes
     	return $mensajes;
     }
 
-    function getUser($user){
-    	//echo $user;
-    	$usuario = $this -> bd -> getUserByID($user);
-    	//print_r($usuario);
+    function getUser($id){
+    	$usuario = $this -> bd -> getUserByID($id); // recibe usuario con id
     	return $usuario;
 
     }
