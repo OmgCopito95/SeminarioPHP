@@ -103,6 +103,11 @@ class BaseDeDatos {
     	return $resultado;
     }
 
+    function eliminarMensaje($idUsuario, $idMensaje){
+    	$query = "DELETE FROM mensaje WHERE usuarios_id=$idUsuario AND id=$idMensaje";
+		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));		
+    }
+
 }
 
 ?>
