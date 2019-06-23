@@ -26,6 +26,11 @@ class MiPerfil {
         $verificacion = $this -> bd -> diMg($idMensaje,$idUsuario);
         return $verificacion;
     }
+
+    function loSigo($idOtroUsuario, $idMio) {
+        $resultado = $this -> bd -> checkFollow($idOtroUsuario,$idMio);
+        return $resultado;
+    }
 }
 
 ?>

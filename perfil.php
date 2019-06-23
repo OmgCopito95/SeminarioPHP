@@ -151,7 +151,12 @@
                     for ($i=0; $i < sizeof($seguidos); $i++) { 
                       echo "<tr>";
                       echo "<td>" . $seguidos[$i][4] . "</td>";
-                      echo "<td><a href=''> Dejar de Seguir </a></td>";
+                      if ($info -> loSigo($seguidos[$i][0], $_SESSION["id"])){
+                        echo "<td><a href='dejarDeSeguir.php?idOtroUsuario=".$seguidos[$i][0]."'>Dejar de seguir</a></td>";
+                      }
+                      else {
+                        echo "<td><a href='seguir.php?idOtroUsuario=".$seguidos[$i][0]."'>Seguir</a></td>";
+                      }
                       echo "</tr>";
                     }
                   ?>

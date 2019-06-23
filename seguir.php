@@ -8,7 +8,14 @@
 
     $bd = new BaseDeDatos($conn);
 
-    $bd ->follow($idOtroUsuario, $idMio);
-
-    header('Location: '."busqueda.php");
+    
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        $bd ->follow($idOtroUsuario, $idMio);
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+    }
+    else {
+        $_SESSION["errores"] = array("Hubo un problema al seguir.");
+        header('Location: '."principal.php");
+    }
+    die();
 ?>
