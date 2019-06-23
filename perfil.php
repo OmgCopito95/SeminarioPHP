@@ -102,9 +102,7 @@
                       <?php 
                           
                   $info = new MiPerfil($conn);
-                  //echo($_SESSION["id"]);
                   $mensajes = $info -> getUltimosMensajes($_SESSION["id"]);
-                  //print_r($mensajes);
                   for ($i=0; $i < sizeof($mensajes) ; $i++) { 
                     echo "<tr>";
                     echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."'/></td>";
@@ -120,26 +118,6 @@
                     <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
                   </tr>
                   <?php } ?>
-                      <!--
-                      
-                    <tr>
-                      <td><img src="style/images/lobo.png"/></td>
-                      <td>Hoy tuve un mal dia.</td>
-                      <td>15/10/2019 - 15:32</a></td>
-                      <td><a href="usuario.php">@Flanders</a></td>
-                      <td><img src="style/images/persona3.jpg"/></td>
-                      <td><a href=""><i class="far fa-thumbs-up"></i> 0</a></td>
-                      <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                    </tr>
-                    <tr>
-                      <td><img src="style/images/ski.jpg"/></td>
-                      <td>Es como si no llevara nada puesto!</td>
-                      <td>15/10/2019 - 15:32</a></td>
-                      <td><a href="usuario.php">@Flanders</a></td>
-                      <td><img src="style/images/persona3.jpg"/></td>
-                      <td><a href=""><i class="fas fa-thumbs-up"></i> 14</a></td>
-                      <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                    </tr> -->
                   </table>
               </td>
             </tr>
