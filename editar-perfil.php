@@ -43,6 +43,7 @@
                 </div>
               </div>
             </li>
+            <li><a href="cambiarContrasenia.php">Cambiar contraseña</a></li>
             <li>
               <form action="validadorBusqueda.php" method="post"> <!-- buscar -->
                 <fieldset>
@@ -92,21 +93,6 @@
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
               <input type="text" name="email" id="email" placeholder="<?php echo $_SESSION["mail"]?>">
-            </div>
-
-            <div class="formfield">
-              <label for="password1"><b>Contraseña actual</b></label>
-              <input type="password" name="passwordActual" id="passwordActual">
-            </div>
-
-            <div class="formfield">
-              <label for="password1"><b>Nueva contraseña</b></label>
-              <input type="password" name="password1" id="password1">
-            </div>
-
-            <div class="formfield">
-              <label for="password2"><b>Repita su contraseña nueva</b></label>
-              <input type="password" name="password2" id="password2">
             </div>
 
             <div class="formfield">
