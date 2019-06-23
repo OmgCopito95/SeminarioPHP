@@ -31,13 +31,11 @@ if ($ok == 0) {
     	$imagenSubida = 1;
         //$contents = file_get_contents($archivo);
         $contents = addslashes(file_get_contents($archivo)); // guarda la imagen a subir
-        echo "El arhivo ". basename( $_FILES["pic"]["name"]). "fue subido correctamente.";
+        //echo "El arhivo ". basename( $_FILES["pic"]["name"]). "fue subido correctamente.";
         unlink($archivo);
     } else {
         echo "Hubo un problema subiendo la imagen.";
     }
 }
 
-
-
-?> 
+?>
