@@ -3,7 +3,8 @@
   if (!$_SESSION["logueado"]){ //verifico si el usuario esta logueado puede ver la vista
       header('Location: '."index.php"); // si no esta logueado lo redirecciona al index
   }
-  include ("clasePrincipal.php"); // muestra los datos para la vista
+  include ("clasePrincipal.php"); // muestra los datos para la vista 
+  include ("BD.php");  
 ?>
 
 <!DOCTYPE html>
@@ -103,38 +104,26 @@
                     <th>Nombre de usuario</th>
                     <th>Foto de perfil</th>
                   </tr>
-                  <tr>
-                    <td></td>
-                    <td>¡Ay ay ay, no es bueno!</td>
-                    <td>22/10/2019 - 15:32</a></td>
-                    <td><a href="usuario.php">@hombreAbeja</a></td>
-                    <td><img src="style/images/persona1.jpg"/></td>
+
+                  <?php 
+                          
+                  $info = new Principal($conn);
+                  $mensajes = $info -> getUltimosMensajes();
+                  //print_r($mensajes);
+                  for ($i=0; $i < sizeof($mensajes) ; $i++) { 
+                    echo "<tr>";
+                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."'/></td>";;
+                    echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
+                    echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
+                    $usuario = $info -> getUser($mensajes[$i][4]); // datos del usuario duenio del msj
+                    echo "<td> <a href=''>" . $usuario[4] . "</a> </td>";
+                    
+                    echo "<td><img src='mostrarImagen.php?id=".$usuario[0]."'/></td>"; ?>
+
+                    <!-- FALTAN LOS ME GUSTA! -->
                     <td><a href=""><i class="fas fa-thumbs-up"></i> 12</a></td>
                   </tr>
-                  <tr>
-                    <td><img src="style/images/imagen3.jpg"/></td>
-                    <td>Al fin, hoy es viernes de siluetas!</td>
-                    <td>8/2/2019 - 9:25</a></td>
-                    <td><a href="usuario.php">@Skinner</a></td>
-                    <td><img src="style/images/persona6.png"/></td>
-                    <td><a href=""><i class="fas fa-thumbs-up"></i> 3</a></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td>El aliento de mi gato huele a comida para gatos.</td>
-                    <td>9/10/2019 - 11:02</a></td>
-                    <td><a href="usuario.php">@rafaaa</a></td>
-                    <td><img src="style/images/persona5.png"/></td>
-                    <td><a href=""><i class="far fa-thumbs-up"></i> 0</a></td>
-                  </tr>
-                  <tr>
-                    <td><img src="style/images/0.jpg"/></td>
-                    <td>¡Ya salió la nueva Stacy Malibu!</td>
-                    <td>7/2/2019 - 9:25</a></td>
-                    <td><a href="usuario.php">@smithers</a></td>
-                    <td><img src="style/images/persona2.jpg"/></td>
-                    <td><a href=""><i class="fas fa-thumbs-up"></i> 22</a></td>
-                  </tr>
+                  <?php } ?>
                 </table>
             </td>
           </tr>
