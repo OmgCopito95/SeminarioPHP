@@ -65,12 +65,12 @@
         <h1 class="title-pen"> Mi Perfil</h1>
         <br>
         <div class="user-profile">
-          <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>" />
+          <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>&view=1" />
           <div class="name"><?php echo $_SESSION["nombre"]. " " . $_SESSION["apellido"]; ?></div>
           <div class="username">@<?php echo $_SESSION["usuario"]; ?></div>
           <div class="input">
-            <form action="" method="post">
-              <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required></textarea>
+            <form action="publicarMensaje.php" method="post" enctype="multipart/form-data">
+              <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required name="mensaje"></textarea>
               <input type="file" name="pic" accept="image/*">
               <button class="button button2 " type="submit"> Publicar </button>
             </form>
@@ -105,11 +105,11 @@
                   $mensajes = $info -> getUltimosMensajes($_SESSION["id"]);
                   for ($i=0; $i < sizeof($mensajes) ; $i++) { 
                     echo "<tr>";
-                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."'/></td>";
+                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."&view=0'/></td>";
                     echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
                     echo "<td> <a href=''>@" . $_SESSION["usuario"] . "</a></td>";                   
-                    echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."'/></td>";
+                    echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."&view=1'/></td>";
                     $cant = $info -> getCantidadMG($mensajes[$i][0]);
                     echo '<td><i class="fas fa-thumbs-up">'. $cant[0] .'</i></td>';
                     echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]."'><i class='fas fa-trash-alt'></i></a></td></tr>"; ?>
