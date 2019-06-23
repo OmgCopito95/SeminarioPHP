@@ -46,9 +46,9 @@
                 </div>
               </li>
             <li>
-              <form action="#" method="post"> <!-- buscar -->
+              <form action="validadorBusqueda.php" method="post"> <!-- buscar -->
                 <fieldset>
-                  <input type="text" value="">
+                  <input type="text" name="buscar" value="">
                   <input type="submit" id="b_submit" value="Buscar">
                 </fieldset>
               </form>
