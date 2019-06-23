@@ -94,8 +94,10 @@
                       <th>Imagen</th>
                       <th>Mensaje</th>
                       <th>Fecha - Hora</th>
-                      <th>Nombre de usuario</th>
-                      <th>Foto de perfil</th>
+                      <!--<th>Nombre de usuario</th>
+                      <th>Foto de perfil</th>-->
+                      <th></th>
+                      <th></th>
                     </tr>
                     <tr>
 
@@ -111,8 +113,8 @@
                     echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."&view=0'/></td>";
                     echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
-                    echo "<td> <a href=''>@" . $_SESSION["usuario"] . "</a></td>";                   
-                    echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."&view=1'/></td>";
+                    #echo "<td> <a href=''>@" . $_SESSION["usuario"] . "</a></td>";                   
+                    #echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."&view=1'/></td>";
                     $cant = $info -> getCantidadMG($mensajes[$i][0]); //le paso id del mensaje
                     if ($info -> verificarMg($mensajes[$i][0],$_SESSION["id"])[0]) { // verifico que el usuario logueado le haya dado me gusta
                       echo "<td><a href='darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=1'><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
