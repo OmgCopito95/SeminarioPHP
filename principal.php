@@ -112,12 +112,12 @@
                   //print_r($mensajes);
                   for ($i=0; $i < sizeof($mensajes) ; $i++) { 
                     echo "<tr>";
-                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."'/></td>";
+                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."&view=0'/></td>";
                     echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
                     $usuario = $info -> getUser($mensajes[$i][4]); // datos del usuario duenio del msj
                     echo "<td> <a href=''> @" . $usuario[4] . "</a> </td>";
-                    echo "<td><img src='mostrarImagen.php?id=".$usuario[0]."'/></td>";
+                    echo "<td><img src='mostrarImagen.php?id=".$usuario[0]."&view=1'/></td>";
                     $cant = $info -> getCantidadMG($mensajes[$i][0]); //le paso id del mensaje
                     if ($info -> verificarMg($mensajes[$i][0],$_SESSION["id"])[0]) { // verifico que el usuario logueado le haya dado me gusta
                       echo "<td><a href=''><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
