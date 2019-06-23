@@ -16,7 +16,7 @@
 			}else{
 				$_SESSION["errores"]=array("Mensaje mayor a 140 caracteres.");
 			}
-    		header('Location: '."principal.php");
+    		header('Location: '."perfil.php");
 		} 
 	}
 ?>
