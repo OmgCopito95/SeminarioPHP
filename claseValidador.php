@@ -42,7 +42,7 @@ class Validador {
     }
 
     function validarBusqueda($buscar){
-        if (preg_match("/^[A-Za-z0-9]$/", $buscar)){
+        if (preg_match("/[A-Za-z0-9]/", $buscar)){
             return true;
         }
         else {
