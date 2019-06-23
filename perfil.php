@@ -131,7 +131,6 @@
             <?php
               $cantTotal = $info ->cantidadMensajesMostrar($_SESSION["id"]);
               $cantPaginas = $cantTotal / 10;
-              echo $cantTotal;
               for ($i=0; $i <$cantPaginas ; $i++) { 
                 if (!empty($_GET["pag"]) and ($_GET['pag']) == $i){
                   echo "<a class='active' href='perfil.php?pag=".$i."'>".$i."</a>";
