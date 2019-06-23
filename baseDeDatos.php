@@ -89,8 +89,8 @@ class BaseDeDatos {
 		return $result;
     }
 
-    function getMensajes(){ // devuelve los ultimos 10 mensajes publicados
-    	$query = "SELECT * FROM mensaje ORDER BY id DESC limit 10";
+    function getMensajesSeguidores($id){ // devuelve los ultimos 10 mensajes publicados por los seguidores
+    	$query = "SELECT msj.* from  `usuarios` as us INNER JOIN  `siguiendo` as sig on us.id= sig.usuarios_id INNER join `mensaje` as msj on msj.usuarios_id = sig.usuarios_id WHERE us.id = $id ORDER BY fechayhora DESC LIMIT 10";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
     	return $resultado;
