@@ -72,6 +72,16 @@
           <img class="avatar" src="mostrarImagen.php?id=<?php echo $_GET["id"]; ?>&view=1" />
           <div class="name"><?php echo $nombreAp; ?></div>
           <div class="username">@<?php echo $nombreUsuario; ?></div>
+          <br>
+          <?php
+            $perfil = new otroPerfil($conn);
+            if ($perfil -> loSigo($_GET["id"], $_SESSION["id"])){
+              echo "<div class='input'><a href='dejarDeSeguir.php?idOtroUsuario=".$_GET["id"]."'>Dejar de Seguir</a></div>";
+            }
+            else {
+              echo "<div class='input'><a href='seguir.php?idOtroUsuario=".$_GET["id"]."'>Seguir</a></div>";
+            }
+          ?>
         </div>
         <br>
         <br>
