@@ -41,9 +41,8 @@ class Validador {
         }
     }
 
-    // FALTA HACERRR. SOLO PUSE ESTO PARA IR PROBANDO LO DEMAS
     function validarBusqueda($buscar){
-        if ($buscar == "a"){
+        if (preg_match("/^[A-Za-z0-9]$/", $buscar)){
             return true;
         }
         else {
