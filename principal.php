@@ -108,7 +108,7 @@
                   <?php 
                           
                   $info = new Principal($conn);
-                  $mensajes = $info -> getUltimosMensajes();
+                  $mensajes = $info -> getUltimosMensajes($_SESSION["id"]);
                   //print_r($mensajes);
                   for ($i=0; $i < sizeof($mensajes) ; $i++) { 
                     echo "<tr>";

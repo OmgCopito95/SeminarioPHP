@@ -8,8 +8,8 @@ class Principal {
     function __construct($conn){
     	$this -> bd = new BaseDeDatos($conn);
     }
-    function getUltimosMensajes(){
-    	$mensajes = $this -> bd->getMensajes(); // recibe los ultimos 10 mensajes
+    function getUltimosMensajes($id){ //recibe el id del usuario logueado
+    	$mensajes = $this -> bd->getMensajesSeguidores($id); // ult 10 msj seguidores
     	return $mensajes;
     }
 
