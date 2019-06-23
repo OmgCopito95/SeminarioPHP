@@ -85,21 +85,16 @@
         </div>
         <br>
         <br>
-        <br>
-
-        <div id="Mensajes" class="tab">
-          <table align="center">
-            <tr>
-              <td>
-                  <table id="tablas">
-                    <tr>
-                      <th>Imagen</th>
-                      <th>Mensaje</th>
-                      <th>Fecha - Hora</th>
-                      <th></th>
-                    </tr>
-                    <tr>
-
+        <table align="center">
+          <tr>
+            <td>
+              <table id="tablas">
+                <tr>
+                  <th>Imagen</th>
+                  <th>Mensaje</th>
+                  <th>Fecha - Hora</th>
+                </tr>
+                <tr>
                 <?php    
                     if (!empty($_GET["pag"])) {
                       $mensajes = $info -> getUltimosMensajes($_GET["id"],$_GET['pag']);
@@ -118,12 +113,14 @@
                       echo "<td><a href='darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=0'><i class='far fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
                     }
                   } ?>
-                  </table>
-              </td>
-            </tr>
-          </table>
-           <br>
-          <div style="text-align: right;">
+                </tr>
+              </table>
+            </td>
+
+          </tr>
+        </table>
+        <br>
+        <div style="text-align: right;">
           <div class="pagination">
             <?php
               $cantTotal = $info ->cantidadMensajesMostrar($_GET["id"]);
@@ -137,14 +134,13 @@
                   }else{
                     echo "<a href='otroPerfil.php?id=".$_GET["id"]."&pag=".$i."'>".$i."</a>";                 
                   }
-                   
+                  
                 }                
               }
             ?>
           </div>
         </div>
-        </div>
-      <br>
+        <br>
       </div>
     </div> <!-- fin seccion 2 -->
 
