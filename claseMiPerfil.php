@@ -13,7 +13,7 @@ class MiPerfil {
     }
 
     function getSeguidos($id){
-    	$mensajes = $this -> bd->getMensajesByID($id); // lista de seguidos
+    	$mensajes = $this -> bd->getSeguidos($id); // lista de seguidos
     	return $mensajes;
     }
 
