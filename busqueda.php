@@ -61,9 +61,9 @@
       <div id="container">
         <br>
         <h1 class="title-pen"> Resultado de la Búsqueda</h1>
-      <br>
-      <br>
-      <table align="center">
+        <br>
+        <br>
+        <table align="center">
           <tr>
             <td>
                 <table id="tablas">
@@ -80,14 +80,14 @@
                   $usuarios = $search -> getResultadosBusqueda($_SESSION["busqueda"]);
                   for ($i=0; $i < sizeof($usuarios); $i++) { 
                     echo "<tr>";
-                    echo "<td><img src='mostrarImagen.php?id=".$usuarios[$i][0]."'/></td>";
+                    echo "<td><img src='mostrarImagen.php?id=".$usuarios[$i][0]."&view=1'/></td>";
                     echo "<td><a href=''> @" .$usuarios[$i][4]. "</a> </td>";
                     echo "<td>".$usuarios[$i][1]." ".$usuarios[$i][2]."</td>";
-                    if ($search -> loSigo($usuarios[$i][0], $SESSION["id"])){
-                      echo "<td>dejar de Seguir</td>";
+                    if ($search -> loSigo($usuarios[$i][0], $_SESSION["id"])){
+                      echo "<td><a href='dejarDeSeguir.php?idOtroUsuario=".$usuarios[$i][0]."'>Dejar de seguir</a></td>";
                     }
                     else {
-                      echo "<td>Seguir</td>";
+                      echo "<td><a href='seguir.php?idOtroUsuario=".$usuarios[$i][0]."'>Seguir</a></td>";
                     }
                     echo "</tr>";
                   }
