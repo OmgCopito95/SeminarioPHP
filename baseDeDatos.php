@@ -123,6 +123,13 @@ class BaseDeDatos {
     	$result = mysqli_fetch_array($result); 
 		return $result;
     }
+
+    function diMg($idMensaje,$idUsuario){
+    	$query = "SELECT count(*) FROM `me_gusta` WHERE usuarios_id=$idUsuario and mensaje_id=$idMensaje";
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link)); 
+    	$result = mysqli_fetch_array($result); 
+		return $result;
+    }
 }
 
 ?>
