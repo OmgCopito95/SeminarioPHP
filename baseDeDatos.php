@@ -9,8 +9,17 @@ class BaseDeDatos {
     	$this->link = $conn;
     }
 
-    function getUser($user){
+    function getUser($user){ // recibe el nombre de usuario
     	$query = "SELECT * FROM usuarios WHERE nombreusuario='".$user."'";
+		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		//recupera una fila de resultado como un array
+		$resultado = mysqli_fetch_array($result);
+		// mysqli_close($link);
+    	return $resultado;
+    }
+
+     function getUserByID($id){ // recibe el nombre de usuario
+    	$query = "SELECT * FROM usuarios WHERE id='".$id."'";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		//recupera una fila de resultado como un array
 		$resultado = mysqli_fetch_array($result);
@@ -78,6 +87,13 @@ class BaseDeDatos {
 		$result = mysqli_query($this->link, $query) or die(mysqli_error($this->link));
 		$result = mysqli_fetch_array($result); 
 		return $result;
+    }
+
+    function getMensajes(){
+    	$query = "SELECT * FROM mensaje ORDER BY id DESC limit 10";
+		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		$resultado = mysqli_fetch_all($result);
+    	return $resultado;
     }
 }
 
