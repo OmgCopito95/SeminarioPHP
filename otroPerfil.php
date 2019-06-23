@@ -86,6 +86,7 @@
                       <th>Imagen</th>
                       <th>Mensaje</th>
                       <th>Fecha - Hora</th>
+                      <th></th>
                     </tr>
                     <tr>
 
@@ -106,8 +107,7 @@
                     }else{
                       echo "<td><a href='darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=0'><i class='far fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
                     }
-                    echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]."'><i class='fas fa-trash-alt'></i></a></td></tr>"; ?>
-                  <?php } ?>
+                  } ?>
                   </table>
               </td>
             </tr>
