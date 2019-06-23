@@ -21,6 +21,11 @@ class MiPerfil {
         $cant = $this -> bd -> getCantidadMGxMensaje($idMensaje);
         return $cant;
     }
+
+    function verificarMg($idMensaje,$idUsuario){
+        $verificacion = $this -> bd -> diMg($idMensaje,$idUsuario);
+        return $verificacion;
+    }
 }
 
 ?>
