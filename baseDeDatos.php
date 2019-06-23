@@ -129,6 +129,14 @@ class BaseDeDatos {
     	return $result;
     }
 
+
+    function cantidadMensajesPropios($id){
+    	$query = "SELECT count(*) from mensaje as msj where msj.usuarios_id =$id";
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+    	$result = mysqli_fetch_array($result); 
+    	return $result;
+    }
+
     function getMensajesSeguidos($id, $limitStart){ // devuelve los ultimos 10 mensajes publicados por los seguidores
     	$cuantosVeo = 10;
     	$limitStart=$limitStart*$cuantosVeo;
