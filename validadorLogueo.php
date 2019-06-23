@@ -22,10 +22,12 @@ if ($_SESSION["logueado"] == false){
             $user = $_POST["username"];
             if ($bd->checkPassword($pass, $user)) {
                 $_SESSION["logueado"] = true;
+
                 $_SESSION["usuario"] = $user; // guarda el nombre de usuario en la session
                 $_SESSION["id"] = $existe[0]; //guardo el id del usuario en la session
                 $_SESSION["nombre"] = $existe[2] ; //guardo el nombre del usuario
                 $_SESSION["apellido"]= $existe[1]; // guardo el apellido del usuario
+                $_SESSION["mail"]= $existe[3]; //guardo el mail del usuario
                 header('Location: '."principal.php");
                 die();
             }
