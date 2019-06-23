@@ -13,7 +13,7 @@ if ($_SESSION["logueado"] == true){
       die();
     }
     else {
-      $_SESSION["errores"] = "Busqueda no permitida.";
+      $_SESSION["errores"] = array("Busqueda no permitida.");
       if (isset($_SERVER['HTTP_REFERER'])) {
         header('Location: '.$_SERVER['HTTP_REFERER']);
       }
@@ -25,7 +25,7 @@ if ($_SESSION["logueado"] == true){
   }
 }
 else {
-  $_SESSION["errores"] = "Para realizar una busqueda debe iniciar sesion";
+  $_SESSION["errores"] = array("Para realizar una busqueda debe iniciar sesion");
   header('Location: '."index.php");
   die();
 }
