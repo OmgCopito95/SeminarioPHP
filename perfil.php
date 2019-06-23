@@ -164,7 +164,7 @@
                   $seguidos = $info -> getSeguidos($_SESSION["id"]);
                     for ($i=0; $i < sizeof($seguidos); $i++) { 
                       echo "<tr>";
-                      echo "<td>" . $seguidos[$i][4] . "</td>";
+                      echo "<td> <a href='otroPerfil.php?id=".$seguidos[$i][0]."'> @" . $seguidos[$i][4] . "</a> </td>";
                       if ($info -> loSigo($seguidos[$i][0], $_SESSION["id"])){
                         echo "<td><a href='dejarDeSeguir.php?idOtroUsuario=".$seguidos[$i][0]."'>Dejar de seguir</a></td>";
                       }
