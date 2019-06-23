@@ -73,7 +73,7 @@ if ($_SESSION["logueado"] == false){
   }
 }
 else {
-  $_SESSION["errores"] = "No se puede registrar estando logueado.";
+  $_SESSION["errores"] = array("No se puede registrar estando logueado.");
   header('Location: '."index.php");
   die();}
 ?>

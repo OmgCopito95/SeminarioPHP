@@ -13,9 +13,11 @@ if ($_SESSION["logueado"] == true){
 
   if ($_SERVER["REQUEST_METHOD"]=="POST") { // si se completo el formulario
     $validador = new Validador(); // instancio objeto validador
+    $cantIngresados = 0;
 
     // verifico que el nombre cumpla
     if (!empty($_POST["nombre"])) {
+      $cantIngresados++;
       if (!$validador->validarNombreApellido($_POST["nombre"])){ 
         $error[]="Nombre incorrecto."; // si no cumple: guardo el error en el array
       }
@@ -25,6 +27,7 @@ if ($_SESSION["logueado"] == true){
     } 
     // verifico que el apellido cumpla
     if (!empty($_POST["apellido"])) {
+      $cantIngresados++;
       if (!$validador->validarNombreApellido($_POST["apellido"])){ 
         $error[]="Apellido incorrecto.";
       }
@@ -35,6 +38,7 @@ if ($_SESSION["logueado"] == true){
 
     // verifico que el email cumpla
     if (!empty($_POST["email"])) {
+      $cantIngresados++;
       if (!$validador->validarEmail($_POST["email"])){ 
         $error[]="Email incorrecto.";
       }
@@ -45,6 +49,7 @@ if ($_SESSION["logueado"] == true){
 
     // verifico que la contraseña actual cumpla
     if (!empty($_POST["passwordActual"])) {
+      $cantIngresados++;
       if (!$validador->validarContrasenias($_POST["passwordActual"],$_POST["passwordActual"])){ 
         $error[]="Contraseña invalida.";
       } else {
@@ -56,6 +61,7 @@ if ($_SESSION["logueado"] == true){
     
       // la contraseña nueva debe estar ingresada las dos veces
       if (!empty($_POST["password1"]) && !empty($_POST["password2"])) {
+        $cantIngresados++;
         if (!$validador->validarContrasenias($_POST["password1"],$_POST["password2"])){ 
           $error[]="Contraseñas incorrectas.";
         }
@@ -68,7 +74,7 @@ if ($_SESSION["logueado"] == true){
       }
     }
 
-    if (sizeof($nuevosdatos) > 0) {
+    if ($cantIngresados > 0) {
       $_SESSION["errores"] = $error;
       // si el array de errores esta vacio, entonces direcciono a la pagina principal
       if (sizeof($error)==0) { // si el array de los errores no tiene elementos
@@ -90,20 +96,20 @@ if ($_SESSION["logueado"] == true){
       }
     }
     else {
-      $_SESSION["errores"] = "No ha ingresado ningun dato para actualizar.";
+      $_SESSION["errores"] = array("No ha ingresado ningun dato para actualizar.");
       header('Location: '."/editar-perfil.php");
       die();
     }
   }
   else {
     // tendria que hacer algo raro para que no sea un POST, pero por si acaso..
-    $_SESSION["errores"] = "No seas malo";
+    $_SESSION["errores"] = array("No seas malo");
     header('Location: '."/editar-perfil.php");
     die();
   }
 }
 else {
-  $_SESSION["errores"] = "Sesion no iniciada.";
+  $_SESSION["errores"] = array("Sesion no iniciada.");
   header('Location: '."/index.php");
   die();
 }

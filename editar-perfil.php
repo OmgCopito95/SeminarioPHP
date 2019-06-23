@@ -61,10 +61,11 @@
       <?php
         //recorro el array de errores para devolver si hay algun campo mal ingresado
         if (!empty($_SESSION["errores"])){
-          $error[] = $_SESSION["errores"];
+          $error = $_SESSION["errores"];
           for ($i=0; $i < sizeof($error) ; $i++) { 
             echo "Error: ".$error[$i]."<br>";
           }
+          unset($_SESSION["errores"]);
         }    
          
       ?> 
