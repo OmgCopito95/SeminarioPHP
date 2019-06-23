@@ -159,19 +159,14 @@ class BaseDeDatos {
 
     function eliminarTodosMg($idUsuario, $idMensaje){
     	// borra todos los mg del mensaje 
-    	echo "string";
     	$query = "DELETE me_gusta.* FROM me_gusta INNER JOIN mensaje on me_gusta.mensaje_id=mensaje.id WHERE me_gusta.mensaje_id=$idMensaje and mensaje.usuarios_id=$idUsuario";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));	
-		echo "string";
-	
     }
 
     function eliminarMensaje($idUsuario, $idMensaje){
 		// borra el mensaje
-		echo "string";
     	$query = "DELETE FROM mensaje WHERE usuarios_id=$idUsuario AND id=$idMensaje";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));	
-		echo "string";
     }
 
     function getSeguidos($id){
