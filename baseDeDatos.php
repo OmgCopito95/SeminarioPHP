@@ -146,8 +146,10 @@ class BaseDeDatos {
     	return $resultado;
     }
 
-    function getMensajesByID($id){ // devuelve los ultimos 10 mensajes publicados por el usuario
-    	$query = "SELECT * FROM mensaje WHERE usuarios_id=$id ORDER BY id DESC limit 10";
+    function getMensajesByID($id,$limitStart){ // devuelve los ultimos 10 mensajes publicados por el usuario
+    	$cuantosVeo = 10;
+    	$limitStart=$limitStart*$cuantosVeo;
+    	$query = "SELECT * FROM mensaje WHERE usuarios_id=$id ORDER BY id DESC limit $cuantosVeo OFFSET $limitStart";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
     	return $resultado;
