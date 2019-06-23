@@ -7,8 +7,8 @@ class MiPerfil {
     function __construct($conn){
     	$this -> bd = new BaseDeDatos($conn);
     }
-    function getUltimosMensajes($id){
-    	$mensajes = $this -> bd->getMensajesByID($id); // ultimos 10 mensajes
+    function getUltimosMensajes($id,$limitStart){
+    	$mensajes = $this -> bd->getMensajesByID($id,$limitStart); // ultimos 10 mensajes
     	return $mensajes;
     }
 
@@ -30,6 +30,11 @@ class MiPerfil {
     function loSigo($idOtroUsuario, $idMio) {
         $resultado = $this -> bd -> checkFollow($idOtroUsuario,$idMio);
         return $resultado;
+    }
+
+    function cantidadMensajesMostrar($id){
+        $cant = $this -> bd -> cantidadMensajesPropios($id);
+        return $cant[0];
     }
 }
 

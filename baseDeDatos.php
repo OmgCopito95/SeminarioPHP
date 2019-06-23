@@ -97,7 +97,8 @@ class BaseDeDatos {
 	function publicarMensaje($mensaje, $userID, $imagen, $tipo_imagen){
         //$mysqltime = date("Y-m-d H:i:s");
         //echo $mysqltime;
-        $query = "INSERT INTO mensaje (texto,imagen_contenido,imagen_tipo,usuarios_id,fechayhora)VALUES('$mensaje', '$imagen','$tipo_imagen',$userID,'')";
+        $date = date('Y-m-d H:i:s');
+        $query = "INSERT INTO mensaje (texto,imagen_contenido,imagen_tipo,usuarios_id,fechayhora)VALUES('$mensaje', '$imagen','$tipo_imagen',$userID,'$date')";
         mysqli_query($this->link,$query) or die(mysqli_error($this->link));
     }
 
@@ -115,12 +116,12 @@ class BaseDeDatos {
 		return $result;
     }
 
-    function getMensajesSeguidos($id){ // devuelve los ultimos 10 mensajes publicados por los seguidores
+    /*function getMensajesSeguidos($id){ // devuelve los ultimos 10 mensajes publicados por los seguidores
     	$query = "SELECT msj.* from `siguiendo` as sig INNER join `mensaje` as msj on msj.usuarios_id = sig.usuarioseguido_id INNER JOIN `usuarios`as us on us.id=sig.usuarios_id WHERE us.id=$id ORDER by id desc limit 10";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
     	return $resultado;
-    }
+    }*/
 
     function cantidadMensajesSeguidos($id){ //cuenta la cantidad total de mensajes de los seguidos
     	$query = "SELECT count(*) from `siguiendo` as sig INNER join `mensaje` as msj on msj.usuarios_id = sig.usuarioseguido_id INNER JOIN `usuarios`as us on us.id=sig.usuarios_id WHERE us.id=$id";
@@ -129,8 +130,16 @@ class BaseDeDatos {
     	return $result;
     }
 
-    function getMensajesSeguidores($id, $limitStart){ // devuelve los ultimos 10 mensajes publicados por los seguidores
-    	$cuantosVeo = 2;
+
+    function cantidadMensajesPropios($id){
+    	$query = "SELECT count(*) from mensaje as msj where msj.usuarios_id =$id";
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+    	$result = mysqli_fetch_array($result); 
+    	return $result;
+    }
+
+    function getMensajesSeguidos($id, $limitStart){ // devuelve los ultimos 10 mensajes publicados por los seguidores
+    	$cuantosVeo = 10;
     	$limitStart=$limitStart*$cuantosVeo;
     	$query = "SELECT msj.* from `siguiendo` as sig INNER join `mensaje` as msj on msj.usuarios_id = sig.usuarioseguido_id INNER JOIN `usuarios`as us on us.id=sig.usuarios_id WHERE us.id=$id ORDER by id desc limit $cuantosVeo OFFSET $limitStart";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
@@ -138,8 +147,10 @@ class BaseDeDatos {
     	return $resultado;
     }
 
-    function getMensajesByID($id){ // devuelve los ultimos 10 mensajes publicados por el usuario
-    	$query = "SELECT * FROM mensaje WHERE usuarios_id=$id ORDER BY id DESC limit 10";
+    function getMensajesByID($id,$limitStart){ // devuelve los ultimos 10 mensajes publicados por el usuario
+    	$cuantosVeo = 10;
+    	$limitStart=$limitStart*$cuantosVeo;
+    	$query = "SELECT * FROM mensaje WHERE usuarios_id=$id ORDER BY id DESC limit $cuantosVeo OFFSET $limitStart";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
     	return $resultado;

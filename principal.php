@@ -145,7 +145,12 @@
                 if (!empty($_GET["pag"]) and ($_GET['pag']) == $i){
                   echo "<a class='active' href='principal.php?pag=".$i."'>".$i."</a>";
                 }else{
-                    echo "<a href='principal.php?pag=".$i."'>".$i."</a>";                  
+                  if ($i == 0) {
+                    echo "<a class='active' href='principal.php'>".$i."</a>";
+                  }else{
+                    echo "<a href='principal.php?pag=".$i."'>".$i."</a>";                 
+                  }
+                   
                 }                
               }
             ?>
