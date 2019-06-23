@@ -100,7 +100,7 @@
               <input type="file" name="pic" id="pic" accept="image/*">
             </div>
 
-            <button name="savechanges" id="editbutton" type="submit">Guardar cambios</button>
+            <button name="savechanges" id="regbutton" type="submit">Guardar cambios</button>
           </form>
         <br>
 
