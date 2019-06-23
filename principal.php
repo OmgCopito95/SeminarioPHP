@@ -112,7 +112,7 @@
                   //print_r($mensajes);
                   for ($i=0; $i < sizeof($mensajes) ; $i++) { 
                     echo "<tr>";
-                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."'/></td>";;
+                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."'/></td>";
                     echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
                     $usuario = $info -> getUser($mensajes[$i][4]); // datos del usuario duenio del msj
