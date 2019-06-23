@@ -103,7 +103,6 @@ class BaseDeDatos {
 
     function mostrarImagenUsuario($id){
     	$query = "SELECT foto_contenido, foto_tipo FROM usuarios WHERE id='".$id."'"; 
-
 		$result = mysqli_query($this->link, $query) or die(mysqli_error($this->link));
 		$result = mysqli_fetch_array($result); 
 		return $result;
@@ -111,16 +110,29 @@ class BaseDeDatos {
 
      function mostrarImagenMensaje($id){
     	$query = "SELECT imagen_contenido, imagen_tipo FROM mensaje WHERE id='".$id."'"; 
-
 		$result = mysqli_query($this->link, $query) or die(mysqli_error($this->link));
 		$result = mysqli_fetch_array($result); 
 		return $result;
     }
 
-    function getMensajesSeguidores($id){ // devuelve los ultimos 10 mensajes publicados por los seguidores
+    function getMensajesSeguidos($id){ // devuelve los ultimos 10 mensajes publicados por los seguidores
     	$query = "SELECT msj.* from `siguiendo` as sig INNER join `mensaje` as msj on msj.usuarios_id = sig.usuarioseguido_id INNER JOIN `usuarios`as us on us.id=sig.usuarios_id WHERE us.id=$id ORDER by id desc limit 10";
+		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
+    	return $resultado;
+    }
 
+    function cantidadMensajesSeguidos($id){ //cuenta la cantidad total de mensajes de los seguidos
+    	$query = "SELECT count(*) from `siguiendo` as sig INNER join `mensaje` as msj on msj.usuarios_id = sig.usuarioseguido_id INNER JOIN `usuarios`as us on us.id=sig.usuarios_id WHERE us.id=$id";
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+    	$result = mysqli_fetch_array($result); 
+    	return $result;
+    }
 
+    function getMensajesSeguidores($id, $limitStart){ // devuelve los ultimos 10 mensajes publicados por los seguidores
+    	$cuantosVeo = 2;
+    	$limitStart=$limitStart*$cuantosVeo;
+    	$query = "SELECT msj.* from `siguiendo` as sig INNER join `mensaje` as msj on msj.usuarios_id = sig.usuarioseguido_id INNER JOIN `usuarios`as us on us.id=sig.usuarios_id WHERE us.id=$id ORDER by id desc limit $cuantosVeo OFFSET $limitStart";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
     	return $resultado;
