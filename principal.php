@@ -116,7 +116,7 @@
                     echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
                     $usuario = $info -> getUser($mensajes[$i][4]); // datos del usuario duenio del msj
-                    echo "<td> <a href=''>" . $usuario[4] . "</a> </td>";
+                    echo "<td> <a href=''> @" . $usuario[4] . "</a> </td>";
                     
                     echo "<td><img src='mostrarImagen.php?id=".$usuario[0]."'/></td>"; ?>
 
