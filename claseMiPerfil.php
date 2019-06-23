@@ -17,6 +17,10 @@ class MiPerfil {
     	return $mensajes;
     }
 
+    function getCantidadMG($idMensaje){
+        $cant = $this -> bd -> getCantidadMGxMensaje($idMensaje);
+        return $cant;
+    }
 }
 
 ?>
