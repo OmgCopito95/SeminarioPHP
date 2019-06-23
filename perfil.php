@@ -58,6 +58,21 @@
       </header>
     </div> <!-- fin seccion 1 -->
 
+    <div style="color: red;"> 
+      <?php
+        //recorro el array de errores para devolver si hay algun campo mal ingresado
+        //print_r($_SESSION);
+        if (!empty($_SESSION["errores"])){
+          $error = $_SESSION["errores"];
+          for ($i=0; $i < sizeof($error) ; $i++) { 
+            echo "Error: " . $error[$i]."<br>";
+          }
+          unset($_SESSION["errores"]); //limpia los errores despues de haberlos escrito
+        }    
+        
+      ?> 
+    </div>
+    
     <!-- seccion 2 -->
     <div class="section row2">
       <div id="container">
@@ -94,8 +109,10 @@
                       <th>Imagen</th>
                       <th>Mensaje</th>
                       <th>Fecha - Hora</th>
-                      <th>Nombre de usuario</th>
-                      <th>Foto de perfil</th>
+                      <!--<th>Nombre de usuario</th>
+                      <th>Foto de perfil</th>-->
+                      <th></th>
+                      <th></th>
                     </tr>
                     <tr>
 
@@ -111,8 +128,8 @@
                     echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."&view=0'/></td>";
                     echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
-                    echo "<td> <a href=''>@" . $_SESSION["usuario"] . "</a></td>";                   
-                    echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."&view=1'/></td>";
+                    #echo "<td> <a href=''>@" . $_SESSION["usuario"] . "</a></td>";                   
+                    #echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."&view=1'/></td>";
                     $cant = $info -> getCantidadMG($mensajes[$i][0]); //le paso id del mensaje
                     if ($info -> verificarMg($mensajes[$i][0],$_SESSION["id"])[0]) { // verifico que el usuario logueado le haya dado me gusta
                       echo "<td><a href='darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=1'><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
@@ -162,7 +179,7 @@
                   $seguidos = $info -> getSeguidos($_SESSION["id"]);
                     for ($i=0; $i < sizeof($seguidos); $i++) { 
                       echo "<tr>";
-                      echo "<td>" . $seguidos[$i][4] . "</td>";
+                      echo "<td> <a href='otroPerfil.php?id=".$seguidos[$i][0]."'> @" . $seguidos[$i][4] . "</a> </td>";
                       if ($info -> loSigo($seguidos[$i][0], $_SESSION["id"])){
                         echo "<td><a href='dejarDeSeguir.php?idOtroUsuario=".$seguidos[$i][0]."'>Dejar de seguir</a></td>";
                       }
