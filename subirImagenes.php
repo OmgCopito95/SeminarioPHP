@@ -25,8 +25,8 @@ if($tipo_imagen != "jpg" && $tipo_imagen != "png" && $tipo_imagen != "jpeg"
 
 // si la variable ok=0, hubo un error y no se puede cargar la imagen
 if (($ok == 0)){
-    $error[]="Se publico el mensaje sin imagen.";
-    $_SESSION["errores"] = $error;
+    //$error[]="Se publico el mensaje sin imagen.";
+    //$_SESSION["errores"] = $error;
 } else {
     if (move_uploaded_file($_FILES["pic"]["tmp_name"], $archivo)) { // guardo archivo en el directorio
     	$imagenSubida = 1;
