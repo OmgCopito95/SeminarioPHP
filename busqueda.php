@@ -1,3 +1,12 @@
+<?php
+  session_start(); //inicio la sesion 
+  if (!$_SESSION["logueado"]){ //verifico si el usuario esta logueado puede ver la vista
+      header('Location: '."index.php"); // si no esta logueado lo redirecciona al index
+  }
+  include ("claseBusqueda.php"); // muestra los datos para la vista 
+  include ("BD.php");  
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -64,24 +73,21 @@
                     <th>Nombre y apellido</th>
                     <th>Seguir / Dejar de seguir</th>
                   </tr>
-                  <tr>
-                    <td><img src="style/images/homero.png"/></td>
-                    <td><a href="usuario.php">@homeroS</a></td>
-                    <td>Homero Simpson</td>
-                    <td><a href=""> Seguir</a></td>
-                  </tr>
-                  <tr>
-                    <td><img src="style/images/lisa.png"/></td>
-                    <td><a href="usuario.php">@LisaS</a></td>
-                    <td>Lisa Simpson</td>
-                    <td><a href="">Seguir</a></td>
-                  </tr>
-                  <tr>
-                    <td><img src="style/images/barto.jpg"/></td>
-                    <td><a href="usuario.php">@BartS</a></td>
-                    <td>El Barto</td>
-                    <td><a href="">Seguir</a></td>
-                  </tr>
+
+                  <?php
+
+                  $search = new Busqueda($conn);
+                  $usuarios = $search -> getResultadosBusqueda($_SESSION["busqueda"]);
+                  for ($i=0; $i < sizeof($usuarios); $i++) { 
+                    echo "<tr>";
+                    echo "<td><img src='mostrarImagen.php?id=".$usuarios[$i][0]."'/></td>";
+                    echo "<td><a href=''> @" .$usuarios[$i][4]. "</a> </td>";
+                    echo "<td>".$usuarios[$i][1]." ".$usuarios[$i][2]."</td>";
+                    echo "<td> Seguir</td>";
+                    echo "</tr>";
+                  }
+                  ?>
+
                 </table>
             </td>
           </tr>
