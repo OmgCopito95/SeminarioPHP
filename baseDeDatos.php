@@ -57,7 +57,7 @@ class BaseDeDatos {
 	}
 	
 	function search($buscar) {
-		$query = "SELECT nombre, apellido, email, nombreusuario, foto_contenido, foto_tipo
+		$query = "SELECT id, nombre, apellido, email, nombreusuario
 				FROM usuarios WHERE (nombreusuario LIKE '%".$buscar."%')
 				OR (nombre LIKE '%".$buscar."%') OR (apellido LIKE '%".$buscar."%')";
 
