@@ -116,6 +116,13 @@ class BaseDeDatos {
 		$resultado = mysqli_fetch_all($result); // me guardo los datos de los usuarios con todas sus filas
     	return $resultado;
     }
+
+    function getCantidadMGxMensaje($idMensaje){
+    	$query = "SELECT count(mensaje_id) from me_gusta where mensaje_id=$idMensaje";
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link)); 
+    	$result = mysqli_fetch_array($result); 
+		return $result;
+    }
 }
 
 ?>
