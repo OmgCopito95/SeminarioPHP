@@ -103,6 +103,7 @@
                     <th>Fecha - Hora</th>
                     <th>Nombre de usuario</th>
                     <th>Foto de perfil</th>
+                    <th></th>
                   </tr>
 
                   <?php 
