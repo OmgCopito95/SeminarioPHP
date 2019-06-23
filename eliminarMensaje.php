@@ -7,7 +7,9 @@
     $idMensaje = $_GET['idMensaje'];  
 
     $bd = new BaseDeDatos($conn);
-    $result = $bd ->eliminarMensaje($idUsuario,$idMensaje);
+
+    $bd ->eliminarTodosMg($idUsuario,$idMensaje);
+    $bd ->eliminarMensaje($idUsuario,$idMensaje);
 
     header('Location: '."perfil.php");
 ?>
