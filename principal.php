@@ -119,7 +119,12 @@
                     echo "<td> <a href=''> @" . $usuario[4] . "</a> </td>";
                     echo "<td><img src='mostrarImagen.php?id=".$usuario[0]."'/></td>";
                     $cant = $info -> getCantidadMG($mensajes[$i][0]); //le paso id del mensaje
-                    echo "<td><a href=''><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
+                    if ($info -> verificarMg($mensajes[$i][0],$_SESSION["id"])[0]) { // verifico que el usuario logueado le haya dado me gusta
+                      echo "<td><a href=''><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
+                    }else{
+                      echo "<td><a href=''><i class='far fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
+                    }
+                    
                     echo "</tr>";
                   }?>
                 </table>
