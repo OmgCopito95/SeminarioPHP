@@ -83,7 +83,12 @@
                     echo "<td><img src='mostrarImagen.php?id=".$usuarios[$i][0]."'/></td>";
                     echo "<td><a href=''> @" .$usuarios[$i][4]. "</a> </td>";
                     echo "<td>".$usuarios[$i][1]." ".$usuarios[$i][2]."</td>";
-                    echo "<td> Seguir</td>";
+                    if ($search -> loSigo($usuarios[$i][0], $SESSION["id"])){
+                      echo "<td>dejar de Seguir</td>";
+                    }
+                    else {
+                      echo "<td>Seguir</td>";
+                    }
                     echo "</tr>";
                   }
                   ?>
