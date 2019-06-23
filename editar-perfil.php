@@ -81,17 +81,17 @@
 
             <div class="formfield">
               <label for="nombre"><b>Nombre</b></label>
-              <input type="text" name="nombre" id="nombre" placeholder="Ned">
+              <input type="text" name="nombre" id="nombre" placeholder="<?php echo $_SESSION["nombre"];?>">
             </div>
 
             <div class="formfield">
               <label for="apellido"><b>Apellido</b></label>
-              <input type="text" name="apellido" id="apellido" placeholder="Flanders">
+              <input type="text" name="apellido" id="apellido" placeholder="<?php echo $_SESSION["apellido"];?>">
             </div>
 
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
-              <input type="text" name="email" id="email" placeholder="ned.flanders@mail.com">
+              <input type="text" name="email" id="email" placeholder="<?php echo $_SESSION["mail"]?>">
             </div>
 
             <div class="formfield">
