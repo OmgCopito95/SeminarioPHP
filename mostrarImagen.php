@@ -5,10 +5,17 @@
     include ("baseDeDatos.php");
 
         $id = $_GET['id']; 
+        $view = $_GET['view'];
         // se recupera la información de la imagen
 
         $bd = new BaseDeDatos($conn);
-        $result = $bd ->mostrarImagen($id);
+
+        if ($view == '0') {
+            $result = $bd ->mostrarImagenMensaje($id); 
+        }else{
+            $result = $bd ->mostrarImagenUsuario($id); 
+        }
+        
 
         //print_r ($result);
 
