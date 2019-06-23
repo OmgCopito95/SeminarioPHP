@@ -150,6 +150,16 @@ class BaseDeDatos {
     	$result = mysqli_fetch_array($result); 
 		return $result;
     }
+
+    function darMeGusta($id_user,$id_msj){
+    	$query = "INSERT INTO me_gusta (usuarios_id, mensaje_id) VALUES ($id_user, $id_msj)";
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+    }
+
+    function eliminarMeGusta($id_user,$id_msj){
+    	$query = "DELETE FROM me_gusta WHERE usuarios_id=$id_user AND mensaje_id=$id_msj" ;
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+    }
 }
 
 ?>
