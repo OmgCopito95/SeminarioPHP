@@ -65,7 +65,7 @@
         <h1 class="title-pen"> Mi Perfil</h1>
         <br>
         <div class="user-profile">
-          <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>" />
+          <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>&view=1" />
           <div class="name"><?php echo $_SESSION["nombre"]. " " . $_SESSION["apellido"]; ?></div>
           <div class="username">@<?php echo $_SESSION["usuario"]; ?></div>
           <div class="input">
