@@ -41,7 +41,7 @@
                 <div class="dropdown-content">
                 <a href="perfil.php">Mi Perfil</a>
                 <a href="editar-perfil.php">Editar Perfil</a>
-                <a href="index.php">Cerrar Sesión</a>
+                <a href="logout.php">Cerrar Sesión</a>
                 </div>
                 </div>
               </li>
@@ -67,7 +67,7 @@
         <div class="user-profile">
           <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>" />
           <div class="name"><?php echo $_SESSION["nombre"]. " " . $_SESSION["apellido"]; ?></div>
-          <div class="username"><?php echo $_SESSION["usuario"]; ?></div>
+          <div class="username">@<?php echo $_SESSION["usuario"]; ?></div>
           <div class="input">
             <form action="" method="post">
               <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required></textarea>
