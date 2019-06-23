@@ -58,27 +58,40 @@ class BaseDeDatos {
 	
 	function search($buscar) {
 		$query = "SELECT id, nombre, apellido, email, nombreusuario
-				FROM usuarios WHERE (nombreusuario LIKE '%".$buscar."%')
-				OR (nombre LIKE '%".$buscar."%') OR (apellido LIKE '%".$buscar."%')";
+				FROM usuarios WHERE (nombreusuario != '". $_SESSION["usuario"] ."') AND ((nombreusuario LIKE '%".$buscar."%')
+				OR (nombre LIKE '%".$buscar."%') OR (apellido LIKE '%".$buscar."%'))";
 
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
 		//recupera todas las filas de resultados como un array de arrays
 		$resultado = mysqli_fetch_all($result);
-		// mysqli_close($link);
-		// for ($i=0; $i < sizeof($resultado) ; $i++) { 
-		// 	for ($j=0; $j < sizeof($resultado[$i]); $j++) { 
-		// 		echo $resultado[$i][$j]." - ";
-		// 	}
-		// 	echo " /////// ";
-		// }
     	return $resultado;
 	}
 
 	function checkFollow($idOtroUsuario, $idMio) {
 		$query = "SELECT count(*) FROM siguiendo WHERE usuarios_id = $idMio AND usuarioseguido_id = $idOtroUsuario";
 		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link)); 
-    	$result = mysqli_fetch_array($result); 
+		$result = mysqli_fetch_array($result); 
 		return $result[0];
+	}
+
+	function follow($idOtroUsuario, $idMio) {
+		if (!$this->checkFollow($idOtroUsuario, $idMio)){
+			$query = "INSERT INTO siguiendo (usuarios_id, usuarioseguido_id) VALUES ($idMio, $idOtroUsuario)";
+			$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		}
+		else {
+			echo "Ya estas siguiendo a este usuario";
+		}
+	}
+
+	function unfollow($idOtroUsuario, $idMio) {
+		if ($this->checkFollow($idOtroUsuario, $idMio)){
+			$query = "DELETE FROM siguiendo WHERE usuarios_id = $idMio AND usuarioseguido_id = $idOtroUsuario";
+			$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		}
+		else {
+			echo "No sigues a este usuario";
+		}
 	}
 
 	function publicarMensaje($mensaje, $userID, $imagen, $tipo_imagen){
