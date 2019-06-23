@@ -3,6 +3,8 @@
   if (!$_SESSION["logueado"]){ //verifico si el usuario esta logueado puede ver la vista
       header('Location: '."index.php"); // si no esta logueado lo redirecciona al index
   }
+  include ("claseMiPerfil.php"); // muestra los datos para la vista 
+  include ("BD.php");  
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +18,7 @@
     <link rel="stylesheet" href="style/css/tables.css" type="text/css">
     <link rel="stylesheet" href="style/css/pagination.css" type="text/css">
     <!-- iconos -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
     <script src="style/js/codigoJS.js"></script>
 
   </head>
@@ -96,14 +98,30 @@
                       <th>Foto de perfil</th>
                     </tr>
                     <tr>
-                      <td></td>
-                      <td>Homero, devuelveme lo que me debes!</td>
-                      <td>15/10/2019 - 15:32</a></td>
-                      <td><a href="usuario.php">@Flanders</a></td>
-                      <td><img src="style/images/persona3.jpg"/></td>
-                      <td><a href=""><i class="fas fa-thumbs-up"></i> 1</a></td>
-                      <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                    </tr>
+
+                      <?php 
+                          
+                  $info = new MiPerfil($conn);
+                  //echo($_SESSION["id"]);
+                  $mensajes = $info -> getUltimosMensajes($_SESSION["id"]);
+                  //print_r($mensajes);
+                  for ($i=0; $i < sizeof($mensajes) ; $i++) { 
+                    echo "<tr>";
+                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."'/></td>";
+                    echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
+                    echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
+                    echo "<td> <a href=''>@" . $_SESSION["usuario"] . "</a></td>";                   
+                    echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."'/></td>"; ?>
+
+                    <!-- FALTAN LOS ME GUSTA! -->
+                    <td><a href=""><i class="fas fa-thumbs-up"></i> 12</a></td>
+
+                    <!-- FALTA EL BORRAR MENSAJE -->
+                    <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
+                  </tr>
+                  <?php } ?>
+                      <!--
+                      
                     <tr>
                       <td><img src="style/images/lobo.png"/></td>
                       <td>Hoy tuve un mal dia.</td>
@@ -121,7 +139,7 @@
                       <td><img src="style/images/persona3.jpg"/></td>
                       <td><a href=""><i class="fas fa-thumbs-up"></i> 14</a></td>
                       <td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-                    </tr>
+                    </tr> -->
                   </table>
               </td>
             </tr>
