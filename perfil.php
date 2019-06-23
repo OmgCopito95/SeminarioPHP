@@ -112,8 +112,7 @@
                     echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."'/></td>";
                     $cant = $info -> getCantidadMG($mensajes[$i][0]);
                     echo '<td><i class="fas fa-thumbs-up">'. $cant[0] .'</i></td>';
-                    echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]. "&idUsuario=". $_SESSION["id"]."'><i class='fas fa-trash-alt'></i></a></td>
-                  </tr>" ?>
+                    echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]."'><i class='fas fa-trash-alt'></i></a></td></tr>"; ?>
                   <?php } ?>
                   </table>
               </td>
