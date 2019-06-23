@@ -74,6 +74,13 @@ class BaseDeDatos {
     	return $resultado;
 	}
 
+	function checkFollow($idOtroUsuario, $idMio) {
+		$query = "SELECT count(*) FROM siguiendo WHERE usuarios_id = $idMio AND usuarioseguido_id = $idOtroUsuario";
+		$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link)); 
+    	$result = mysqli_fetch_array($result); 
+		return $result[0];
+	}
+
 	function publicarMensaje($mensaje, $userID, $imagen, $tipo_imagen){
         //$mysqltime = date("Y-m-d H:i:s");
         //echo $mysqltime;
