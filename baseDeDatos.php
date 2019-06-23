@@ -52,6 +52,7 @@ class BaseDeDatos {
 		if ($password == mysqli_fetch_array($result)[0]){
 			return true;
 		} else {
+			throw new Exception('Contraseña o usuario incorrectos.');
 			return false;
 		}
 	}
