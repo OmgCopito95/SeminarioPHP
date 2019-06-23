@@ -95,33 +95,33 @@ if ($_SESSION["logueado"] == true){
   
         $bd->editUser($nuevosdatos, $_SESSION["usuario"]);
   
-        header('Location: '."/principal.php");
+        header('Location: '."principal.php");
         die();
       }
       else {
         // for ($i=0; $i < sizeof($error); $i++) { 
         //   echo $error[0];
         // }
-        header('Location: '."/editar-perfil.php");
+        header('Location: '."editar-perfil.php");
         die();
       }
     }
     else {
       $_SESSION["errores"] = array("No ha ingresado ningun dato para actualizar.");
-      header('Location: '."/editar-perfil.php");
+      header('Location: '."editar-perfil.php");
       die();
     }
   }
   else {
     // tendria que hacer algo raro para que no sea un POST, pero por si acaso..
     $_SESSION["errores"] = array("No seas malo");
-    header('Location: '."/editar-perfil.php");
+    header('Location: '."editar-perfil.php");
     die();
   }
 }
 else {
   $_SESSION["errores"] = array("Sesion no iniciada.");
-  header('Location: '."/index.php");
+  header('Location: '."index.php");
   die();
 }
 ?>
