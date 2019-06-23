@@ -1,8 +1,9 @@
 <?php
+	session_start();
     include ("BD.php");
     include ("baseDeDatos.php");
 
-    $idUsuario = $_GET['idUsuario'];
+    $idUsuario = $_SESSION["id"];
     $idMensaje = $_GET['idMensaje'];  
 
     $bd = new BaseDeDatos($conn);
