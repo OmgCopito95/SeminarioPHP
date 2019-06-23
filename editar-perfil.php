@@ -39,7 +39,7 @@
                 <div class="dropdown-content">
                 <a href="perfil.php">Mi Perfil</a>
                 <a href="editar-perfil.php">Editar Perfil</a>
-                <a href="index.php">Cerrar Sesión</a>
+                <a href="logout.php">Cerrar Sesión</a>
                 </div>
               </div>
             </li>
