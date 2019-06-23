@@ -14,6 +14,7 @@ if ($_SESSION["logueado"] == true){
     }
     else {
       $_SESSION["errores"] = array("Busqueda no permitida.");
+      $_SESSION["busqueda"] = " ";
       if (isset($_SERVER['HTTP_REFERER'])) {
         header('Location: '.$_SERVER['HTTP_REFERER']);
       }
