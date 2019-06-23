@@ -9,7 +9,7 @@ class Principal {
         $this -> bd = new BaseDeDatos($conn);
     }
     function getUltimosMensajes($id,$limit){ //recibe el id del usuario logueado
-        $mensajes = $this -> bd->getMensajesSeguidores($id,$limit); // ult 10 msj seguidores
+        $mensajes = $this -> bd->getMensajesSeguidos($id,$limit); // ult 10 msj seguidos
         return $mensajes;
     }
 
