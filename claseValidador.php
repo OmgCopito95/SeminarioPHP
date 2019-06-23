@@ -50,6 +50,15 @@ class Validador {
         }
     }
 
+    function validarNuevaContrasenia($actual, $anterior){
+        if ($actual != $anterior) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
 
 ?>

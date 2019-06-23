@@ -62,11 +62,16 @@ if ($_SESSION["logueado"] == true){
       // la contraseña nueva debe estar ingresada las dos veces
       if (!empty($_POST["password1"]) && !empty($_POST["password2"])) {
         $cantIngresados++;
-        if (!$validador->validarContrasenias($_POST["password1"],$_POST["password2"])){ 
-          $error[]="Contraseñas incorrectas.";
+        if ($validador->validarNuevaContrasenia($_POST["passwordActual"], $_POST["password1"])) {
+          if (!$validador->validarContrasenias($_POST["password1"],$_POST["password2"])){ 
+            $error[]="Contraseñas incorrectas.";
+          }
+          else {
+            $nuevosdatos["contrasenia"] = $_POST["password1"];
+          }
         }
         else {
-          $nuevosdatos["contrasenia"] = $_POST["password1"];
+          $error[] = "La contraseña nueva igual a la anterior.";
         }
       }
       else {
