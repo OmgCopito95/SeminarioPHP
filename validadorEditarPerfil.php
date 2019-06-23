@@ -6,7 +6,7 @@ if ($_SESSION["logueado"] == true){
   include ("claseValidador.php");
   include ("baseDeDatos.php");
   include ("BD.php");
-  // include ("subirImagenes.php");
+  include ("subirImagenes.php");
 
   $error = array(); // creo un array que me guarde los mensajes de error
   $nuevosdatos = array(); // guardo el/los dato/s a editar para enviar array como parametro
@@ -66,12 +66,18 @@ if ($_SESSION["logueado"] == true){
           $error[]="Contraseñas incorrectas.";
         }
         else {
-          $nuevosdatos["password"] = $_POST["password1"];
+          $nuevosdatos["contrasenia"] = $_POST["password1"];
         }
       }
       else {
         $error[] = "Debe ingresar dos veces la nueva contraseña.";
       }
+    }
+
+    if ($imagenSubida == 1){
+      $nuevosdatos["foto_contenido"] = $contents;
+      $nuevosdatos["foto_tipo"] = $tipo_imagen;
+      $cantIngresados++;
     }
 
     if ($cantIngresados > 0) {
