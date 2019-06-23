@@ -96,7 +96,7 @@
                   for ($i=0; $i < sizeof($usuarios); $i++) { 
                     echo "<tr>";
                     echo "<td><img src='mostrarImagen.php?id=".$usuarios[$i][0]."&view=1'/></td>";
-                    echo "<td><a href=''> @" .$usuarios[$i][4]. "</a> </td>";
+                    echo "<td><a href='otroPerfil.php?id=".$usuarios[$i][0]."'> @" .$usuarios[$i][4]. "</a> </td>";
                     echo "<td>".$usuarios[$i][1]." ".$usuarios[$i][2]."</td>";
                     if ($search -> loSigo($usuarios[$i][0], $_SESSION["id"])){
                       echo "<td><a href='dejarDeSeguir.php?idOtroUsuario=".$usuarios[$i][0]."'>Dejar de seguir</a></td>";
