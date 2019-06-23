@@ -109,14 +109,10 @@
                     echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
                     echo "<td> <a href=''>@" . $_SESSION["usuario"] . "</a></td>";                   
-                    echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."'/></td>"; ?>
-
-                    <!-- FALTAN LOS ME GUSTA! -->
-                    <td><a href=""><i class="fas fa-thumbs-up"></i> 12</a></td>
-
-                    <?php
-                    echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]. "&idUsuario=". $_SESSION["id"]."'><i class='fas fa-trash-alt'></i></a></td>
-                  </tr>" ?>
+                    echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."'/></td>";
+                    $cant = $info -> getCantidadMG($mensajes[$i][0]);
+                    echo '<td><i class="fas fa-thumbs-up">'. $cant[0] .'</i></td>';
+                    echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]."'><i class='fas fa-trash-alt'></i></a></td></tr>"; ?>
                   <?php } ?>
                   </table>
               </td>
