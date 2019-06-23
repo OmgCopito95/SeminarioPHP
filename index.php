@@ -66,43 +66,43 @@
     <div class="section row2">
       <div id="container" align="center">
         <br>
-          <form id="regform" method="POST" action="validadorRegistro.php" onsubmit="<!--return(validarForm())-->" enctype="multipart/form-data"<!-- para subir imagen -->
+          <form id="regform" method="POST" action="validadorRegistro.php" onsubmit="return(validarForm())" enctype="multipart/form-data"<!-- para subir imagen -->
             <h2>¿Aún no tienes una cuenta? ¡Regístrate!</h2>
 
             <!-- required's comentados para prueba -->
             <div class="formfield">
               <label for="nombre"><b>Nombre</b></label>
-              <input type="text" id="nombre" name="nombre">
+              <input type="text" id="nombre" name="nombre" required>
             </div>
 
             <div class="formfield">
               <label for="apellido"><b>Apellido</b></label>
-              <input type="text" id="apellido" name="apellido">
+              <input type="text" id="apellido" name="apellido" required>
             </div>
 
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
-              <input type="text" id="email" name="email">
+              <input type="text" id="email" name="email" required>
             </div>
 
             <div class="formfield">
               <label for="username"><b>Nombre de usuario</b></label>
-              <input type="text" id="username" name="user">
+              <input type="text" id="username" name="user" required>
             </div>
 
             <div class="formfield">
               <label for="password1"><b>Contraseña</b></label>
-              <input type="password" id="password1" name="pass1">
+              <input type="password" id="password1" name="pass1" required>
             </div>
 
             <div class="formfield">
               <label for="password2"><b>Repita su contraseña</b></label>
-              <input type="password" id="password2" name="pass2">
+              <input type="password" id="password2" name="pass2" required>
             </div>
 
             <div class="formfield">
               <label for="pic"><b>Imagen de perfil</b></label>
-              <input type="file" id="pic" name="pic" accept="image/*">
+              <input type="file" id="pic" name="pic" accept="image/*" required>
             </div>
 
             <button id="regbutton" type="submit">Registrarme</button>
