@@ -108,8 +108,12 @@
                   <?php 
                           
                   $info = new Principal($conn);
-                  $mensajes = $info -> getUltimosMensajes($_SESSION["id"]);
-                  //print_r($mensajes);
+                  if (!empty($_GET["pag"])) {
+                    $mensajes = $info -> getUltimosMensajes($_SESSION["id"],$_GET['pag']);
+                  }else{
+                    $mensajes = $info -> getUltimosMensajes($_SESSION["id"],'0');
+                  }
+
                   for ($i=0; $i < sizeof($mensajes) ; $i++) { 
                     echo "<tr>";
                     echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."&view=0'/></td>";
@@ -134,13 +138,17 @@
         <br>
         <div style="text-align: right;">
           <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a class="active" href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">&raquo;</a>
+            <?php
+              $cantTotal = $info ->cantidadMensajesMostrar($_SESSION["id"]);
+              $cantPaginas = $cantTotal / 10;
+              for ($i=0; $i <$cantPaginas ; $i++) { 
+                if (!empty($_GET["pag"]) and ($_GET['pag']) == $i){
+                  echo "<a class='active' href='principal.php?pag=".$i."'>".$i."</a>";
+                }else{
+                    echo "<a href='principal.php?pag=".$i."'>".$i."</a>";                  
+                }                
+              }
+            ?>
           </div>
         </div>
       </div>
