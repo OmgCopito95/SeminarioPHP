@@ -57,13 +57,13 @@
     </div> <!-- fin seccion 1 -->
 
     <!-- ERRORES -->
-    <div style="color: red;"> 
+    <div style="color: red; text-align:center;"> 
       <?php
         //recorro el array de errores para devolver si hay algun campo mal ingresado
         if (!empty($_SESSION["errores"])){
           $error = $_SESSION["errores"];
           for ($i=0; $i < sizeof($error) ; $i++) { 
-            echo "Error: " . $error[$i]."<br>";
+            echo $error[$i]."<br>";
           }
           unset($_SESSION["errores"]); //limpia los errores despues de haberlos escrito
         }    
