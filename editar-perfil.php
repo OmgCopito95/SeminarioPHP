@@ -43,7 +43,7 @@
                 </div>
               </div>
             </li>
-            <li><a href="cambiarContrasenia.php">Cambiar contraseña</a></li>
+            <li><a href="editarContrasenia.php">Cambiar contraseña</a></li>
             <li>
               <form action="validadorBusqueda.php" method="post"> <!-- buscar -->
                 <fieldset>
