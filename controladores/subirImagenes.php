@@ -1,6 +1,12 @@
 <?php
 $directorio = "imagenes/"; //directorio donde se va a guardar la imagen
-$archivo = $directorio . basename($_FILES["pic"]["name"]); //nombre del archivo
+try {
+    $archivo = $directorio . basename($_FILES["pic"]["name"]); //nombre del archivo
+} catch (Exception $e) {
+    $directorio = "../imagenes/";
+    $archivo = $directorio . basename($_FILES["pic"]["name"]); //nombre del archivo
+}
+//$archivo = $directorio . basename($_FILES["pic"]["name"]); //nombre del archivo
 $ok = 1;
 $tipo_imagen = strtolower(pathinfo($archivo,PATHINFO_EXTENSION)); //se guarda la extension
 
@@ -39,5 +45,5 @@ if (($ok == 0)){
         $_SESSION["errores"] = $error;
     }
 }
-
+//die();
 ?>
