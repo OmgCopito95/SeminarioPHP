@@ -5,7 +5,7 @@ $password = "";
 $nombre_de_la_base_de_datos = 'seminariophp';
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password,$nombre_de_la_base_de_datos);
 
 // Check connection
 if ($conn->connect_error) {
