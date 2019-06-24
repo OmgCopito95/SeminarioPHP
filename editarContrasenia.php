@@ -95,7 +95,7 @@
               <input type="password" name="password2" id="password2">
             </div>
 
-            <button name="savechanges" id="editbutton" type="submit">Guardar cambios</button>
+            <button name="savechanges" id="regbutton" type="submit">Guardar cambios</button>
           </form>
         <br>
 
