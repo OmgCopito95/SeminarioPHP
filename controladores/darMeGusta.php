@@ -1,7 +1,7 @@
 <?php
 	session_start();
-    include ("BD.php");
-    include ("baseDeDatos.php");
+    include ("../BD.php");
+    include ("../baseDeDatos.php");
 
     $idUsuario = $_SESSION["id"];
     $idMensaje = $_GET['idMensaje'];  
@@ -15,5 +15,5 @@
 		$bd -> eliminarMeGusta($idUsuario,$idMensaje);
     }    
 
-    header('Location: '."principal.php");
+    header('Location: '."../principal.php");
 ?>

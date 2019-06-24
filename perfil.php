@@ -46,7 +46,7 @@
                 </div>
               </li>
             <li>
-              <form action="validadorBusqueda.php" method="post"> <!-- buscar -->
+              <form action="controladores/validadorBusqueda.php" method="post"> <!-- buscar -->
                 <fieldset>
                   <input type="text" name="buscar" value="">
                   <input type="submit" id="b_submit" value="Buscar">
@@ -132,11 +132,11 @@
                     #echo "<td><img src='mostrarImagen.php?id=".$_SESSION["id"]."&view=1'/></td>";
                     $cant = $info -> getCantidadMG($mensajes[$i][0]); //le paso id del mensaje
                     if ($info -> verificarMg($mensajes[$i][0],$_SESSION["id"])[0]) { // verifico que el usuario logueado le haya dado me gusta
-                      echo "<td><a href='darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=1'><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
+                      echo "<td><a href='controladores/darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=1'><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
                     }else{
-                      echo "<td><a href='darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=0'><i class='far fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
+                      echo "<td><a href='controladores/darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=0'><i class='far fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
                     }
-                    echo "<td><a href='eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]."'><i class='fas fa-trash-alt'></i></a></td></tr>"; ?>
+                    echo "<td><a href='controladores/eliminarMensaje.php?idMensaje=" .$mensajes[$i][0]."'><i class='fas fa-trash-alt'></i></a></td></tr>"; ?>
                   <?php } ?>
                   </table>
               </td>
@@ -185,10 +185,10 @@
                       echo "<td> <a href='otroPerfil.php?id=".$seguidos[$i][0]."'> @" . $seguidos[$i][4] . "</a> </td>";
                       echo "<td>".$seguidos[$i][1]." ".$seguidos[$i][2]."</td>";
                       if ($info -> loSigo($seguidos[$i][0], $_SESSION["id"])){
-                        echo "<td><a href='dejarDeSeguir.php?idOtroUsuario=".$seguidos[$i][0]."'>Dejar de seguir</a></td>";
+                        echo "<td><a href='controladores/dejarDeSeguir.php?idOtroUsuario=".$seguidos[$i][0]."'>Dejar de seguir</a></td>";
                       }
                       else {
-                        echo "<td><a href='seguir.php?idOtroUsuario=".$seguidos[$i][0]."'>Seguir</a></td>";
+                        echo "<td><a href='controladores/seguir.php?idOtroUsuario=".$seguidos[$i][0]."'>Seguir</a></td>";
                       }
                       echo "</tr>";
                     }

@@ -2,9 +2,9 @@
 session_start();
 if ($_SESSION["logueado"] == false){
 
-  include ("claseValidador.php");
-  include ("baseDeDatos.php");
-  include ("BD.php");
+  include ("../claseValidador.php");
+  include ("../baseDeDatos.php");
+  include ("../BD.php");
   include ("subirImagenes.php");
 
   $error = array(); // creo un array que me guarde los mensajes de error
@@ -64,17 +64,17 @@ if ($_SESSION["logueado"] == false){
       $_SESSION["apellido"]= $existe[1]; // guardo el apellido del usuario
       $_SESSION["mail"]= $existe[3]; //guardo el mail del usuario
       
-      header('Location: '."principal.php");
+      header('Location: '."../principal.php");
     } 
     else {
       $_SESSION["errores"] = $error; //guarda los errores en la sesion del usuario para poder usar la variable en la vista
-      header('Location: '."index.php");
+      header('Location: '."../index.php");
 
     }
   }
 }
 else {
   $_SESSION["errores"] = array("No se puede registrar estando logueado.");
-  header('Location: '."index.php");
+  header('Location: '."../index.php");
   die();}
 ?>

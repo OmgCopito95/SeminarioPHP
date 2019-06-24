@@ -1,9 +1,9 @@
 <?php
 session_start();
 if ($_SESSION["logueado"] == false){
-  include ("claseValidador.php");
-  include ("baseDeDatos.php");
-  include ("BD.php");
+  include ("../claseValidador.php");
+  include ("../baseDeDatos.php");
+  include ("../BD.php");
 
   if ($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
     $validador = new Validador(); // instancio objeto validador
@@ -29,7 +29,7 @@ if ($_SESSION["logueado"] == false){
                     $_SESSION["nombre"] = $existe[2] ; //guardo el nombre del usuario
                     $_SESSION["apellido"]= $existe[1]; // guardo el apellido del usuario
                     $_SESSION["mail"]= $existe[3]; //guardo el mail del usuario
-                    header('Location: '."principal.php");
+                    header('Location: '."../principal.php");
                     die();
                 }
             }catch (Exception $e){
@@ -40,13 +40,13 @@ if ($_SESSION["logueado"] == false){
     }
     // por seguridad no debo decirle que es lo que esta mal
     $_SESSION["errores"] = array("Usuario o contraseña incorrectos.");
-    header('Location: '."index.php");
+    header('Location: '."../index.php");
     die();
   }
 }
 else {
   $_SESSION["errores"] = array("Sesion ya iniciada.");
-  header('Location: '."index.php");
+  header('Location: '."../index.php");
   die();
 }
 ?>

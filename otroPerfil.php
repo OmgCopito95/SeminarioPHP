@@ -76,10 +76,10 @@
           <?php
             $perfil = new otroPerfil($conn);
             if ($perfil -> loSigo($_GET["id"], $_SESSION["id"])){
-              echo "<div class='input'><a href='dejarDeSeguir.php?idOtroUsuario=".$_GET["id"]."'>Dejar de Seguir</a></div>";
+              echo "<div class='input'><a href='controladores/dejarDeSeguir.php?idOtroUsuario=".$_GET["id"]."'>Dejar de Seguir</a></div>";
             }
             else {
-              echo "<div class='input'><a href='seguir.php?idOtroUsuario=".$_GET["id"]."'>Seguir</a></div>";
+              echo "<div class='input'><a href='controladores/seguir.php?idOtroUsuario=".$_GET["id"]."'>Seguir</a></div>";
             }
           ?>
         </div>
@@ -108,9 +108,9 @@
                     echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora                 
                     $cant = $info -> getCantidadMG($mensajes[$i][0]); //le paso id del mensaje
                     if ($info -> verificarMg($mensajes[$i][0],$_SESSION["id"])[0]) { // verifico que el usuario logueado le haya dado me gusta
-                      echo "<td><a href='darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=1'><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
+                      echo "<td><a href='controladores/darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=1'><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
                     }else{
-                      echo "<td><a href='darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=0'><i class='far fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
+                      echo "<td><a href='controladores/darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=0'><i class='far fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
                     }
                   } ?>
                 </tr>

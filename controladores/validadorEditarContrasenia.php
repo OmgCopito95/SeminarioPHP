@@ -1,9 +1,9 @@
 <?php
 session_start();
 if ($_SESSION["logueado"] == true){
-  include ("claseValidador.php");
-  include ("baseDeDatos.php");
-  include ("BD.php");
+  include ("../claseValidador.php");
+  include ("../baseDeDatos.php");
+  include ("../BD.php");
 
   $error = array(); // creo un array que me guarde los mensajes de error
 
@@ -56,33 +56,33 @@ if ($_SESSION["logueado"] == true){
   
         $bd->editUser($nuevapass, $_SESSION["usuario"]);
   
-        header('Location: '."editar-perfil.php");
+        header('Location: ../'."editar-perfil.php");
         die();
       }
       else {
         // for ($i=0; $i < sizeof($error); $i++) { 
         //   echo $error[0];
         // }
-        header('Location: '."editarContrasenia.php");
+        header('Location: ../'."editarContrasenia.php");
         die();
       }
     }
     else {
       $_SESSION["errores"] = array("No ha ingresado ningun dato para actualizar.");
-      header('Location: '."editarContrasenia.php");
+      header('Location: ../'."editarContrasenia.php");
       die();
     }
   }
   else {
     // tendria que hacer algo raro para que no sea un POST, pero por si acaso..
     $_SESSION["errores"] = array("No seas malo");
-    header('Location: '."editarContrasenia.php");
+    header('Location: ../'."editarContrasenia.php");
     die();
   }
 }
 else {
   $_SESSION["errores"] = array("Sesion no iniciada.");
-  header('Location: '."index.php");
+  header('Location: ../'."index.php");
   die();
 }
 ?>

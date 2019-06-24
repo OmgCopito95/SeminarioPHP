@@ -32,7 +32,7 @@
         <nav> <!-- menu con los links -->
           <ul>
             <li>
-              <form action="validadorLogueo.php" method="POST"> <!-- iniciar sesion  -->
+              <form action="controladores/validadorLogueo.php" method="POST"> <!-- iniciar sesion  -->
                 <fieldset>
                   <input type="text" name="username" placeholder="Nombre de usuario" required>
                   <input type="password" name="password" placeholder="Contraseña" required>
@@ -66,7 +66,7 @@
     <div class="section row2">
       <div id="container" align="center">
         <br>
-          <form id="regform" method="POST" action="validadorRegistro.php" onsubmit="return(validarForm())" enctype="multipart/form-data"<!-- para subir imagen -->
+          <form id="regform" method="POST" action="controladores/validadorRegistro.php" onsubmit="return(validarForm())" enctype="multipart/form-data"<!-- para subir imagen -->
             <h2>¿Aún no tienes una cuenta? ¡Regístrate!</h2>
 
             <!-- required's comentados para prueba -->

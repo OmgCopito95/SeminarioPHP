@@ -1,7 +1,7 @@
 <?php
 	session_start();
-    include ("BD.php");
-    include ("baseDeDatos.php");
+    include ("../BD.php");
+    include ("../baseDeDatos.php");
 
     $idMio = $_SESSION["id"];
     $idOtroUsuario = $_GET["idOtroUsuario"];  
@@ -15,7 +15,7 @@
     }
     else {
         $_SESSION["errores"] = array("Hubo un problema al seguir.");
-        header('Location: '."principal.php");
+        header('Location: '."../principal.php");
     }
     die();
 ?>
