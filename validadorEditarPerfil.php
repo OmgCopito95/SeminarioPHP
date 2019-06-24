@@ -1,7 +1,5 @@
 <?php
 session_start();
-// echo sizeof($_POST);
-// echo $_POST[1];
 if ($_SESSION["logueado"] == true){
   include ("claseValidador.php");
   include ("baseDeDatos.php");
@@ -44,38 +42,6 @@ if ($_SESSION["logueado"] == true){
       }
       else {
         $nuevosdatos["email"] = $_POST["email"];
-      }
-    }
-
-    // verifico que la contraseña actual cumpla
-    if (!empty($_POST["passwordActual"])) {
-      $cantIngresados++;
-      if (!$validador->validarContrasenias($_POST["passwordActual"],$_POST["passwordActual"])){ 
-        $error[]="Contraseña invalida.";
-      } else {
-        $bd = new BaseDeDatos($conn);
-        if (!$bd->checkPassword($_POST["passwordActual"], $_SESSION["usuario"])) {
-          $error[]="Contraseña incorrecta.";
-        }
-      }
-    
-      // la contraseña nueva debe estar ingresada las dos veces
-      if (!empty($_POST["password1"]) && !empty($_POST["password2"])) {
-        $cantIngresados++;
-        if ($validador->validarNuevaContrasenia($_POST["passwordActual"], $_POST["password1"])) {
-          if (!$validador->validarContrasenias($_POST["password1"],$_POST["password2"])){ 
-            $error[]="Contraseñas incorrectas.";
-          }
-          else {
-            $nuevosdatos["contrasenia"] = $_POST["password1"];
-          }
-        }
-        else {
-          $error[] = "La contraseña nueva igual a la anterior.";
-        }
-      }
-      else {
-        $error[] = "Debe ingresar dos veces la nueva contraseña.";
       }
     }
 
