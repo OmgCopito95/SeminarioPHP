@@ -93,6 +93,7 @@
                   <th>Imagen</th>
                   <th>Mensaje</th>
                   <th>Fecha - Hora</th>
+                  <th></th>
                 </tr>
                 <tr>
                 <?php    
