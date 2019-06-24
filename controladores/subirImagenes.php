@@ -1,5 +1,5 @@
 <?php
-$directorio = "../imagenes/"; //directorio donde se va a guardar la imagen
+$directorio = "imagenes/"; //directorio donde se va a guardar la imagen
 $archivo = $directorio . basename($_FILES["pic"]["name"]); //nombre del archivo
 $ok = 1;
 $tipo_imagen = strtolower(pathinfo($archivo,PATHINFO_EXTENSION)); //se guarda la extension

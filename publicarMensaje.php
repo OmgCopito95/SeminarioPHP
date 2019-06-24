@@ -5,7 +5,7 @@
 
 		include ("baseDeDatos.php");
 		include ("BD.php");
-		include ("subirImagenes.php");
+		include ("controladores/subirImagenes.php");
 
 		if($_SERVER["REQUEST_METHOD"]=="POST"){ // si se completo el formulario
 			$mensaje = $_POST["mensaje"]; // me guardo el mensaje que escribio
