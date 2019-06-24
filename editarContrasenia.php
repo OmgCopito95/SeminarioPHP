@@ -44,7 +44,7 @@
               </div>
             </li>
             <li>
-              <form action="validadorBusqueda.php" method="post"> <!-- buscar -->
+              <form action="controladores/validadorBusqueda.php" method="post"> <!-- buscar -->
                 <fieldset>
                   <input type="text" name="buscar" value="">
                   <input type="submit" id="b_submit" value="Buscar">
@@ -77,7 +77,7 @@
       <div id="container" align="center">
 
         <br>
-          <form id="regform" style="border: 0px;" method="POST" action="controladores/validadorEditarContrasenia.php" onsubmit="return(validarForm())" enctype="multipart/form-data"><!-- para subir imagen -->
+          <form id="regform" style="border: 0px;" method="POST" action="controladores/validadorEditarContrasenia.php" onsubmit="return(editarPass())" enctype="multipart/form-data"><!-- para subir imagen -->
             <h1 class="title-pen">Modificar contraseña</h1></h2>
 
             <div class="formfield">
