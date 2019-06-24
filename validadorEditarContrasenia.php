@@ -18,8 +18,11 @@ if ($_SESSION["logueado"] == true){
         $error[]="Contraseña invalida.";
       } else {
         $bd = new BaseDeDatos($conn);
-        if (!$bd->checkPassword($_POST["passwordActual"], $_SESSION["usuario"])) {
-          $error[]="Contraseña incorrecta.";
+        try{
+          $bd->checkPassword($_POST["passwordActual"], $_SESSION["usuario"]);
+        }
+        catch (Exception $e) {
+            $error[]=$e->getMessage();
         }
       }
     
