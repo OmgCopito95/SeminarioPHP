@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION["logueado"] == false){
+if (!isset($_SESSION["logueado"]) and $_SESSION['logueado'] == false){
 
   include ("../claseValidador.php");
   include ("../baseDeDatos.php");
