@@ -43,7 +43,6 @@
                 </div>
               </div>
             </li>
-            <li><a href="editarContrasenia.php">Cambiar contraseña</a></li>
             <li>
               <form action="controladores/validadorBusqueda.php" method="post"> <!-- buscar -->
                 <fieldset>
@@ -82,17 +81,17 @@
 
             <div class="formfield">
               <label for="nombre"><b>Nombre</b></label>
-              <input type="text" name="nombre" id="nombre" placeholder="<?php echo $_SESSION["nombre"];?>">
+              <input type="text" name="nombre" id="nombre" placeholder="<?php echo $_SESSION["nombre"];?>" value="<?php echo $_SESSION["nombre"];?>">
             </div>
 
             <div class="formfield">
               <label for="apellido"><b>Apellido</b></label>
-              <input type="text" name="apellido" id="apellido" placeholder="<?php echo $_SESSION["apellido"];?>">
+              <input type="text" name="apellido" id="apellido" placeholder="<?php echo $_SESSION["apellido"];?>" value="<?php echo $_SESSION["apellido"];?>">
             </div>
 
             <div class="formfield">
               <label for="email"><b>Correo electrónico</b></label>
-              <input type="text" name="email" id="email" placeholder="<?php echo $_SESSION["mail"]?>">
+              <input type="text" name="email" id="email" placeholder="<?php echo $_SESSION["mail"]?>" value="<?php echo $_SESSION["mail"]?>">
             </div>
 
             <div class="formfield">
@@ -101,6 +100,7 @@
             </div>
 
             <button name="savechanges" id="regbutton" type="submit">Guardar cambios</button>
+            <button name="savechanges" id="regbutton"><a href="editarContrasenia.php" style="color: white; background-color: transparent;">Cambiar Contraseña</a></button>
           </form>
         <br>
 
