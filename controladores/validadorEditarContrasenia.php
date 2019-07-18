@@ -52,10 +52,11 @@ if ($_SESSION["logueado"] == true){
       if (sizeof($error)==0) { // si el array de los errores no tiene elementos
         //hay que crear el usuario e ir a la pagina principal
         $bd = new BaseDeDatos($conn);
-        //falta guardar la imagen del usuario.
-  
         $bd->editUser($nuevapass, $_SESSION["usuario"]);
-  
+
+        $confirmaciones[] = "Constraseña modificada con éxito.";      
+        $_SESSION["confirmaciones"] = $confirmaciones;
+
         header('Location: ../'."editar-perfil.php");
         die();
       }

@@ -70,6 +70,20 @@
          
       ?> 
     </div>
+    <div style="color: #7CFC00; text-align:center;"> 
+      <?php
+        //recorro el array de errores para devolver si hay algun campo mal ingresado
+        //print_r($_SESSION);
+        if (!empty($_SESSION["confirmaciones"])){
+          $error = $_SESSION["confirmaciones"];
+          for ($i=0; $i < sizeof($error) ; $i++) { 
+            echo $error[$i]."<br>";
+          }
+          unset($_SESSION["confirmaciones"]); //limpia los errores despues de haberlos escrito
+        }    
+        
+      ?> 
+    </div>
 
     <!-- seccion 2 -->
     <div class="section row2">
