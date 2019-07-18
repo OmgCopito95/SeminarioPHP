@@ -142,11 +142,11 @@
             <?php
               $cantTotal = $info ->cantidadMensajesMostrar($_SESSION["id"]);
               $cantPaginas = $cantTotal / 10;
-              for ($i=0; $i <$cantPaginas ; $i++) { 
+              for ($i=1; $i <$cantPaginas ; $i++) { 
                 if (!empty($_GET["pag"]) and ($_GET['pag']) == $i){
                   echo "<a class='active' href='principal.php?pag=".$i."'>".$i."</a>";
                 }else{
-                  if ($i == 0) {
+                  if ($i == 1) {
                     echo "<a class='active' href='principal.php'>".$i."</a>";
                   }else{
                     echo "<a href='principal.php?pag=".$i."'>".$i."</a>";                 
