@@ -1,4 +1,4 @@
-<?php
+<?php // verifica que no quiera entrar al index si ya esta logueado
   session_start();
   if (!empty($_SESSION["logueado"])) {
     header('Location: '."principal.php");
@@ -32,7 +32,7 @@
         <nav> <!-- menu con los links -->
           <ul>
             <li>
-              <form action="controladores/validadorLogueo.php" method="POST"> <!-- iniciar sesion  -->
+              <form action="controladores/validadorLogueo.php" method="POST"> <!-- iniciar sesion  login -->
                 <fieldset>
                   <input type="text" name="username" placeholder="Nombre de usuario" required>
                   <input type="password" name="password" placeholder="Contraseña" required>
@@ -62,6 +62,8 @@
       ?> 
     </div>
 
+    <!-- codigo para validar registro con javascript js validarForm 
+      esta en style/js/codigoJS -->
 
     <div class="section row2">
       <div id="container" align="center">

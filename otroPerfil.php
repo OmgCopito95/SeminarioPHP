@@ -3,12 +3,12 @@
   if (!$_SESSION["logueado"]){ //verifico si el usuario esta logueado puede ver la vista
       header('Location: '."index.php"); // si no esta logueado lo redirecciona al index
   }
-  include ("claseOtroPerfil.php"); // muestra los datos para la vista 
+  include ("claseOtroPerfil.php"); // para poder instanciar objeto claseOtroPerfil
   include ("BD.php");  
 
   $info = new otroPerfil($conn);
-  $nombreAp = $info -> getNombreAp($_GET["id"]);
-  $nombreUsuario = $info -> getNombreUsuario($_GET["id"]);
+  $nombreAp = $info -> getNombreAp($_GET["id"]);   // me guardo el nombre y apellido
+  $nombreUsuario = $info -> getNombreUsuario($_GET["id"]); // me guardo el nombre de usuario
 ?>
 
 <!DOCTYPE html>

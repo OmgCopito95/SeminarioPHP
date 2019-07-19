@@ -1,3 +1,5 @@
+// para los tab de Seguidos y Mis Mensajes en MI PERFIL
+
 function openTab(tabName) {
   var i;
   var x = document.getElementsByClassName("tab");
