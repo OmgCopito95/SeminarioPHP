@@ -3,7 +3,7 @@
   if (!$_SESSION["logueado"]){ //verifico si el usuario esta logueado puede ver la vista
       header('Location: '."index.php"); // si no esta logueado lo redirecciona al index
   }
-  include ("clasePrincipal.php"); // para poder crear objetos de tipo Principal
+  include ("claseRespuestas.php"); // para poder crear objetos de tipo Principal
   include ("BD.php");  
 ?>
 
@@ -76,21 +76,8 @@
     <div class="section row2">
       <div id="container">
         <br>
-        <h1 class="title-pen"> Últimas Actualizaciones</h1>
+        <h1 class="title-pen"> Ver Respuestas</h1>
         <br>
-        <div class="user-profile">
-          <!-- view=1 es imagen de usuario -->
-          <img class="avatar" src="mostrarImagen.php?id=<?php echo $_SESSION["id"]; ?>&view=1"/>
-          <div class="name"><?php echo $_SESSION["nombre"]. " " . $_SESSION["apellido"]; ?></div>
-          <div class="input">
-            <form action="publicarMensaje.php" method="post" enctype="multipart/form-data">
-              <textarea rows="3" cols="20" maxlength="140" placeholder="Escribe lo que piensas.." required name="mensaje"></textarea>
-              <input type="file" name="pic" accept="image/*">
-              <button class="button button2 " type="submit"> Publicar </button>
-            </form>
-          </div>
-
-        </div>
       <br>
       <hr style="width: 82%;">
       <br>
@@ -99,45 +86,34 @@
             <td>
                 <table id="tablas">
                   <tr>
-                    <th>Imagen</th>
-                    <th>Mensaje</th>
+                    
+                    <th>Respuesta</th>
                     <th>Fecha - Hora</th>
                     <th>Nombre de usuario</th>
                     <th>Foto de perfil</th>
-                    <th></th>
                   </tr>
 
                   <?php 
                           
-                  $info = new Principal($conn); // creo objeto principal
-                  if (!empty($_GET["pag"])) { // si aprete alguna pagina
+                  //$info = new Principal($conn); // creo objeto principal
+                  $info = new Respuesta($conn);
+
+                  $mensajes = $info -> getRespuestas($_GET['idMensaje']);
+                  /*if (!empty($_GET["pag"])) { // si aprete alguna pagina
                     $mensajes = $info -> getUltimosMensajes($_SESSION["id"],$_GET['pag']);
                     //muestro los mensajes de esa pagina
                   }else{
                     //sino muestro los mensajes de la primera pagina
                     $mensajes = $info -> getUltimosMensajes($_SESSION["id"],'0');
-                  }
+                  }*/
 
                   for ($i=0; $i < sizeof($mensajes) ; $i++) { 
                     echo "<tr>";
-
-                    #view=0 es imagen de mensaje
-
-                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][0]."&view=0'/></td>";
                     echo "<td>" . $mensajes[$i][1] . "</td>"; // mensaje
-                    echo "<td>" . $mensajes[$i][5] . "</td>"; // fecha y hora
-                    $usuario = $info -> getUser($mensajes[$i][4]); // datos del usuario duenio del msj
-                    echo "<td> <a href='otroPerfil.php?id=".$usuario[0]."'> @" . $usuario[4] . "</a> </td>";
-                    echo "<td><img src='mostrarImagen.php?id=".$usuario[0]."&view=1'/></td>";
-                    $cant = $info -> getCantidadMG($mensajes[$i][0]); //le paso id del mensaje
-                    if ($info -> verificarMg($mensajes[$i][0],$_SESSION["id"])[0]) { // verifico que el usuario logueado le haya dado me gusta
-                      echo "<td><a href='controladores/darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=1'><i class='fas fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
-                    }else{
-                      echo "<td><a href='controladores/darMeGusta.php?idMensaje=".$mensajes[$i][0]."&mg=0'><i class='far fa-thumbs-up'></i>" . $cant[0] . "</a></td>";
-                    }
-                    echo "<td><a href='responderMensaje.php?idMensaje=".$mensajes[$i][0]."'> Responder </a>"; 
-                    echo "</tr>";
-                    echo "<td><a href='verRespuestas.php?idMensaje=".$mensajes[$i][0]."'>Respuestas</a>"; 
+                    echo "<td>" . $mensajes[$i][3] . "</td>"; // fecha y hora
+                    echo "<td> <a href='otroPerfil.php?id=".$mensajes[$i][5]."'> @" . $mensajes[$i][9] . "</a> </td>";
+                    echo "<td><img src='mostrarImagen.php?id=".$mensajes[$i][5]."&view=1'/></td>";
+                    
                     echo "</tr>";
                   }?>
                 </table>
@@ -145,26 +121,6 @@
           </tr>
         </table>
         <br>
-        <div style="text-align: right;">
-          <div class="pagination">
-            <?php
-              $cantTotal = $info ->cantidadMensajesMostrar($_SESSION["id"]);
-              $cantPaginas = $cantTotal / 10;
-              for ($i=1; $i <$cantPaginas ; $i++) { 
-                if (!empty($_GET["pag"]) and ($_GET['pag']) == $i){
-                  echo "<a class='active' href='principal.php?pag=".$i."'>".$i."</a>";
-                }else{
-                  if ($i == 1) {
-                    echo "<a class='active' href='principal.php'>".$i."</a>";
-                  }else{
-                    echo "<a href='principal.php?pag=".$i."'>".$i."</a>";                 
-                  }
-                   
-                }                
-              }
-            ?>
-          </div>
-        </div>
       </div>
       <br>
     </div> <!-- fin seccion 2 -->

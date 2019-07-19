@@ -157,6 +157,15 @@ class BaseDeDatos {
     	return $resultado;
     }
 
+    function getMensajesMasMG($id,$limitStart){ //muestra los primeros 10 msj con mas mg
+    	$cuantosVeo = 10;
+    	$limitStart=$limitStart*$cuantosVeo;
+    	$query = "SELECT mensaje.* from mensaje INNER JOIN me_gusta ON me_gusta.mensaje_id=mensaje.id GROUP BY mensaje.id order by COUNT(me_gusta.mensaje_id) desc limit $cuantosVeo offset $limitStart"; 
+    	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+		$resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
+    	return $resultado;	
+    }
+
     function eliminarTodosMg($idUsuario, $idMensaje){
     	// borra todos los mg del mensaje 
     	$query = "DELETE me_gusta.* FROM me_gusta INNER JOIN mensaje on me_gusta.mensaje_id=mensaje.id WHERE me_gusta.mensaje_id=$idMensaje and mensaje.usuarios_id=$idUsuario";
@@ -198,6 +207,22 @@ class BaseDeDatos {
     function eliminarMeGusta($id_user,$id_msj){
     	$query = "DELETE FROM me_gusta WHERE usuarios_id=$id_user AND mensaje_id=$id_msj" ;
     	$result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+    }
+
+    function publicarRespuesta($msj,$id_user,$id_msj){ 
+        //$mysqltime = date("Y-m-d H:i:s");
+        //echo $mysqltime;
+        $date = date('Y-m-d H:i:s');
+        $query = "INSERT INTO respuesta_mensaje (texto,usuarios_id,fechayhora,mensaje_id)VALUES('$msj', $id_user ,'$date', $id_msj)";
+        mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+    }
+
+    function getRespuestas($id_msj){
+        $query = "select * from respuesta_mensaje INNER join usuarios on usuarios.id=respuesta_mensaje.usuarios_id WHERE respuesta_mensaje.mensaje_id=$id_msj";
+
+        $result = mysqli_query($this->link,$query) or die(mysqli_error($this->link));
+        $resultado = mysqli_fetch_all($result); // me guardo los mensajes con todas sus filas
+        return $resultado;
     }
 }
 
